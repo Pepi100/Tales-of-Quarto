@@ -1,0 +1,589 @@
+fileFormatVersion: 2
+guid: 89f9c34ccbfb1114a84f6bef2c3bf4b5
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_0
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 580
+        width: 134
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6375127addac51145a4db1949b12d926
+      internalID: 718727171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 583
+        width: 129
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dcb0b79178c0743902ff1fd02e5b05
+      internalID: 462065089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_2
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 395
+        width: 230
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13be9dfbb7ac8e84da541df5c0d106b5
+      internalID: 2096404107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_3
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 394
+        width: 119
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aae378d671219c42aef18792aa3225f
+      internalID: -1321131305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_4
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 280
+        width: 211
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 17, w: 10}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4798bf029947804db3973c43af525ac
+      internalID: 105071542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_5
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 194
+        width: 211
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 137426a69fb45544b98e966c5fa50185
+      internalID: -1374105450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_6
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 87
+        width: 216
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcaf4c22439ad0c49b6a1ac2a6b45781
+      internalID: -1274338140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_7
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 226
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b998931c90e6c2c4690deffd7f29f1c2
+      internalID: -812107553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_8
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 283
+        width: 130
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2860d4b345bad458a45980bbe6f160
+      internalID: 569673667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_9
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 184
+        width: 129
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b98e1a23c6c6aba47b2c36b7c3bcbfda
+      internalID: 666099228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_10
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 80
+        width: 130
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a0c573ed7295df4fa24495d46fb51c4
+      internalID: -894611550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_11
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 0
+        width: 135
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76f01aeb21f75743921bd9a909b3c5c
+      internalID: 954011223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_12
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 667
+        width: 216
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0fde67ff8da2ac4fbc7f5e1b79555ef
+      internalID: -385536410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_13
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 665
+        width: 131
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbf70bd21f414f44a514ced32b8b02d
+      internalID: -1453853373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_14
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 573
+        width: 143
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd9d6982279e854fa28cc2c99bc574d
+      internalID: -196303464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_15
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 379
+        width: 169
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa1227a7af84734d94ad93631ce7059
+      internalID: 1716779838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_16
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 178
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 265667d1041d5864286d5a4438ebf7d1
+      internalID: -995064397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_17
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 493
+        width: 179
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eec328c0425104146b100608924cc8f9
+      internalID: -1264179931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_18
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 194
+        width: 219
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e2a256a2d610843b1445b3fc2e6740
+      internalID: -559366730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_19
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 90
+        width: 203
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33ad873aa29f8c428a59b61653b1e7b
+      internalID: -2027056057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Houses_TILESET_B-C-D-E_20
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 0
+        width: 201
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa71ec6dedce1c14da0b4bd2dfda8c4b
+      internalID: -1436187687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Houses_TILESET_B-C-D-E_0: 718727171
+      Houses_TILESET_B-C-D-E_1: 462065089
+      Houses_TILESET_B-C-D-E_10: -894611550
+      Houses_TILESET_B-C-D-E_11: 954011223
+      Houses_TILESET_B-C-D-E_12: -385536410
+      Houses_TILESET_B-C-D-E_13: -1453853373
+      Houses_TILESET_B-C-D-E_14: -196303464
+      Houses_TILESET_B-C-D-E_15: 1716779838
+      Houses_TILESET_B-C-D-E_16: -995064397
+      Houses_TILESET_B-C-D-E_17: -1264179931
+      Houses_TILESET_B-C-D-E_18: -559366730
+      Houses_TILESET_B-C-D-E_19: -2027056057
+      Houses_TILESET_B-C-D-E_2: 2096404107
+      Houses_TILESET_B-C-D-E_20: -1436187687
+      Houses_TILESET_B-C-D-E_3: -1321131305
+      Houses_TILESET_B-C-D-E_4: 105071542
+      Houses_TILESET_B-C-D-E_5: -1374105450
+      Houses_TILESET_B-C-D-E_6: -1274338140
+      Houses_TILESET_B-C-D-E_7: -812107553
+      Houses_TILESET_B-C-D-E_8: 569673667
+      Houses_TILESET_B-C-D-E_9: 666099228
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
