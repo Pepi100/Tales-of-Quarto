@@ -8,9 +8,7 @@
   - Eric Morosan 252
 
 ## Epic story 
-Our product strives to be a fun Android open world game made in Unity, using C#.<br><br>
-This game's protagonist is a brave and courageous duck living on a peaceful island... until her eggs are stolen by a malicious minotaur. Now she's on a mission to recover them. <br><br>
-She has to complete challenges on her way so that she can get closer to her kids. There will be three challenges, each consisting of mini-games that test the duck's skills and abilities. She has to avoid all kinds of dangerous obstacles in various environments. Every win will give her rewards and advantages for the final fight. The last challenge will be to take down the minotaur and reclaim her eggs so she can finally be happy with her family.<br>
+  - To be continued
 
 ## Reports and user stories
 All the reports and user stories can be found <a href= "https://drive.google.com/drive/folders/1TB1HYDuZLqeMnfC3uYngrMfA8mSj83oe?usp=sharing" > here </a>

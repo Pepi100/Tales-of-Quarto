@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9853209a5435d78428f71be0cdd11a48
+guid: 94fed71b49de75749a29929a08aa0b54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,8 +48,8 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
-  spriteBorder: {x: 2, y: 2, z: 15, w: 2}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,43 +110,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkbox 01_0
+      name: GUI_1x_sliced_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 69
+        x: 109
+        y: 73
+        width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 2, y: 2, z: 1, w: 2}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1846979e21488eb4abe0fc873c3fa4a6
-      internalID: -1751152682
+      spriteID: d5d5965e8b47af149bc21dd6c9e4189b
+      internalID: -862630216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkbox 01_1
+      name: GUI_1x_sliced_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 0
-        width: 14
+        x: 91
+        y: 73
+        width: 17
         height: 17
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 1, y: 4, z: 3, w: 4}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a149450ebcc9f408b417f6e3433026
-      internalID: -516953539
+      spriteID: a0900d821f5b6e74c808fca228c765b2
+      internalID: -202192355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_sliced_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 55
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214ea3a56bbd5114c870c7dc64f8cb29
+      internalID: 1718037990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_sliced_3
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 55
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 867a19a70a8b60847bfcab472c8fd532
+      internalID: -1075195855
       vertices: []
       indices: 
       edges: []
@@ -155,15 +197,17 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Checkbox 01_0: -1751152682
-      Checkbox 01_1: -516953539
+      GUI_1x_sliced_0: -862630216
+      GUI_1x_sliced_1: -202192355
+      GUI_1x_sliced_2: 1718037990
+      GUI_1x_sliced_3: -1075195855
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

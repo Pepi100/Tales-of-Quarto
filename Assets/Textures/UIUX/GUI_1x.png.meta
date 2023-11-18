@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9853209a5435d78428f71be0cdd11a48
+guid: 7077cae21b18c98419d53a3314ee6df2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 16
-  spriteBorder: {x: 2, y: 2, z: 15, w: 2}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -110,43 +110,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkbox 01_0
+      name: GUI_1x_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 69
-        height: 17
+        x: 96
+        y: 88
+        width: 24
+        height: 24
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 2, y: 2, z: 1, w: 2}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 3, z: 4, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1846979e21488eb4abe0fc873c3fa4a6
-      internalID: -1751152682
+      spriteID: 49c473f56906e8340876c246f9895e47
+      internalID: -943349763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Checkbox 01_1
+      name: GUI_1x_1
       rect:
         serializedVersion: 2
-        x: 69
-        y: 0
-        width: 14
-        height: 17
+        x: 33
+        y: 25
+        width: 31
+        height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 1, y: 4, z: 3, w: 4}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 8, z: 9, w: 9}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71a149450ebcc9f408b417f6e3433026
-      internalID: -516953539
+      spriteID: 65dbef79d3ce5834ebcf2685c5bdf62a
+      internalID: 1113075769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb569acb423363418c90e9a54b55582
+      internalID: -1657098902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 88
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 022550e861898644b978482345de6095
+      internalID: -1515741003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_4
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 49
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9177770df923504ca7723d4a6b7f7a8
+      internalID: -447835240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GUI_1x_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd0267a5a21c0124e8907b3110e561ac
+      internalID: -132997586
       vertices: []
       indices: 
       edges: []
@@ -155,15 +239,19 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Checkbox 01_0: -1751152682
-      Checkbox 01_1: -516953539
+      GUI_1x_0: -943349763
+      GUI_1x_1: 1113075769
+      GUI_1x_2: -1657098902
+      GUI_1x_3: -1515741003
+      GUI_1x_4: -447835240
+      GUI_1x_5: -132997586
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
