@@ -2,10 +2,10 @@
 2D Sandbox game made in Unity.
 
 ## REDD Team - Team Members:
-  - Radu Nedelcu 252 - Team Leader
-  - David Pătrânjel 251 - Senior Coder
-  - Diana Muscalu 244
-  - Eric Morosan 252
+  - Radu Nedelcu 352 - Team Leader
+  - David Pătrânjel 351 - Senior Coder
+  - Diana Muscalu 344
+  - Eric Morosan 352
 
 <img src="./gallery/Logo ToQ.png" alt="Logo ToQ" />
 
