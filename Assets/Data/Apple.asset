@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11a7d0837f42f4143b4a7b6017b0f480, type: 3}
-  m_Name: Heart
+  m_Name: Apple
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 64
-  <Name>k__BackingField: Heart
-  <Description>k__BackingField: You can use this for regenerating your health.
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: 4f43f7d68d23505428876fc4af8e8491, type: 3}
+  <Name>k__BackingField: Apple
+  <Description>k__BackingField: This is an apple
+  <ItemImage>k__BackingField: {fileID: 2747690628134850419, guid: 39eda6b51557b404aa7c79263da70aee, type: 3}
   <DefaultParametersList>k__BackingField: []
   _modifiersData:
   - statModifier: {fileID: 11400000, guid: e03a9ce3084535944a2dd6a1f648e188, type: 2}
-    value: 1
+    value: 10
   <actionSFX>k__BackingField: {fileID: 8300000, guid: 7e8d475fee179f6429755a5313ed94ae, type: 3}
