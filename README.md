@@ -7,8 +7,11 @@
   - Diana Muscalu 344
   - Eric Morosan 352
 
+<img src="./gallery/Logo ToQ.png" alt="Logo ToQ" />
+
+
 ## Epic story 
-Our product strives to be a fun Android open world game made in Unity, using C#.<br><br>
+  - To be continued
 This game's protagonist is a brave and courageous duck living on a peaceful island... until her eggs are stolen by a malicious minotaur. Now she's on a mission to recover them. <br><br>
 She has to complete challenges on her way so that she can get closer to her kids. There will be three challenges, each consisting of mini-games that test the duck's skills and abilities. She has to avoid all kinds of dangerous obstacles in various environments. Every win will give her rewards and advantages for the final fight. The last challenge will be to take down the minotaur and reclaim her eggs so she can finally be happy with her family.<br>
 
