@@ -90,6 +90,17 @@
                     "action": "InventoryActions",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9cc89b5c-0ae0-421a-a8be-7b77698ad719",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InventoryActions",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

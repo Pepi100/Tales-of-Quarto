@@ -30,20 +30,28 @@ namespace Inventory
 
         public void OpenInventory(InputAction.CallbackContext context)
         {
-            if (_inventoryUI.isActiveAndEnabled == false)
+
+            if( context.control.displayName == "E")
             {
-                _inventoryUI.Show();
-                foreach (var item in _inventoryData.GetCurrentInventoryState())
+                if (_inventoryUI.isActiveAndEnabled == false)
                 {
-                    _inventoryUI.UpdateData(item.Key,
-                        item.Value.item.ItemImage,
-                        item.Value.quantity);
+                    _inventoryUI.Show();
+                    foreach (var item in _inventoryData.GetCurrentInventoryState())
+                    {
+                        _inventoryUI.UpdateData(item.Key,
+                            item.Value.item.ItemImage,
+                            item.Value.quantity);
+                    }
                 }
+                else
+                {
+                    _inventoryUI.Hide();
+                }
+
             }
-            else
-            {
-                _inventoryUI.Hide();
-            }
+
+            
+
         }
 
         private void HandleDescriptionRequest(int itemIndex)
