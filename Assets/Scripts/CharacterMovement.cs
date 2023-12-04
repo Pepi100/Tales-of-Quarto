@@ -23,9 +23,13 @@ public class CharacterMovement : MonoBehaviour
         float maxx;
         var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
         if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
+        {
             maxx = Mathf.Abs(_input.x);
+        }
         else
+        {
             maxx = Mathf.Abs(_input.y);
+        }
         animator.SetFloat("Speed", maxx);
 
 /*        pentru muzica
@@ -52,14 +56,14 @@ public class CharacterMovement : MonoBehaviour
             animator.SetInteger("Direction", 2);
             if (!facingUp)
             { facingUp = !facingUp; }
-            
+
         }
-        if (_input.y < 0 )
+        if (_input.y < 0)
         {
             animator.SetInteger("Direction", 0);
             if (facingUp)
             { facingUp = !facingUp; }
-            
+
         }
         if (_input.x != 0 )
         {
