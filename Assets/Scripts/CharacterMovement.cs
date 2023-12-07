@@ -10,25 +10,30 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     private float _maxSpeed = 3.0f;
     private Vector2 _input;
+    private int _inBossBattle;
 
     bool facingLeft = false;
     bool facingUp = false;
     bool isMoving = false;
    
-
+    public void Awake()
+    {
+        _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1 ;
+    }
 
     public void Move(InputAction.CallbackContext context) =>
         _input =  context.ReadValue<Vector2>();
-    private void Update() {
+    private void Update() 
+    {
         float maxx;
-        var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
-        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
+        var velocity = new Vector3(_input.x, _input.y * _inBossBattle, 0.0f) * _maxSpeed;
+        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y * _inBossBattle))
         {
             maxx = Mathf.Abs(_input.x);
         }
         else
         {
-            maxx = Mathf.Abs(_input.y);
+            maxx = Mathf.Abs(_input.y * _inBossBattle);
         }
         animator.SetFloat("Speed", maxx);
 
@@ -50,15 +55,14 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        if (_input.y > 0)
+        if (_input.y * _inBossBattle > 0)
         {
             animator.SetInteger("Direction", 2);
             if (!facingUp)
             { facingUp = !facingUp; }
 
         }
-        if (_input.y < 0)
+        if (_input.y * _inBossBattle < 0)
         {
             animator.SetInteger("Direction", 0);
             if (facingUp)
