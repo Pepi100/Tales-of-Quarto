@@ -69,7 +69,7 @@ namespace Inventory
             {
                 sb.Append($"{inventoryItem.itemState[i].itemParameter.ParameterName} " +
                     $": {inventoryItem.itemState[i].value} / " +
-                    $"{inventoryItem.item.DefaultParametersList[i].value}");
+                    $"{inventoryItem.item.DefaultParametersList[i].itemParameter.MaxValue}");
                 sb.AppendLine();
             }
             return sb.ToString();

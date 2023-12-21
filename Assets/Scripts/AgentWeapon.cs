@@ -1,9 +1,11 @@
 using Inventory.Model;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class AgentWeapon : MonoBehaviour
+public class AgentWeapon : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField]
     private EquippableItemSO _weapon;
@@ -13,6 +15,7 @@ public class AgentWeapon : MonoBehaviour
 
     [SerializeField]
     private List<ItemParameter> _parametersToModify, _itemCurrentState;
+    public event Action<AgentWeapon> OnItemClicked;
 
     public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState)
     {
@@ -41,5 +44,15 @@ public class AgentWeapon : MonoBehaviour
                 };
             }
         }
+    }
+
+    public void OnPointerClick(PointerEventData pointerData)
+    {
+        OnItemClicked?.Invoke(this);
+    }
+
+    public EquippableItemSO getWeapon()
+    {
+        return _weapon;
     }
 }
