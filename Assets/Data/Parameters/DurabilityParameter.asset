@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: DurabilityParameter
   m_EditorClassIdentifier: 
   <ParameterName>k__BackingField: Durability
+  <MaxValue>k__BackingField: 100
