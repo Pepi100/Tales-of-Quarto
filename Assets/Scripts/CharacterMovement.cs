@@ -14,34 +14,48 @@ public class CharacterMovement : MonoBehaviour
     bool facingLeft = false;
     bool facingUp = false;
     bool isMoving = false;
+    public Vector2 lastMotionVector;
    
 
 
     public void Move(InputAction.CallbackContext context) =>
         _input =  context.ReadValue<Vector2>();
     private void Update() {
-        float maxx;
         var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
+        transform.position += velocity * Time.deltaTime;
+
+        float maxx;
         if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
             maxx = Mathf.Abs(_input.x);
         else
             maxx = Mathf.Abs(_input.y);
         animator.SetFloat("Speed", maxx);
 
-/*        pentru muzica
- *        if (maxx > 0)
-            isMoving = true;
-        else
-            isMoving = false;
-        if (isMoving)
+        if (_input.x != 0 || _input.y != 0)
         {
-            if (!audioSrc.isPlaying)
-                audioSrc.Play();
+            lastMotionVector = new Vector2(
+                _input.x,
+                _input.y
+                ).normalized;
+
+            animator.SetFloat("lastHorizontal", lastMotionVector.x);
+            animator.SetFloat("lastVertical", lastMotionVector.y);
         }
-        else
-            audioSrc.Stop();*/
-        
-        transform.position += velocity * Time.deltaTime;
+
+
+        /*        pentru muzica
+         *        if (maxx > 0)
+                    isMoving = true;
+                else
+                    isMoving = false;
+                if (isMoving)
+                {
+                    if (!audioSrc.isPlaying)
+                        audioSrc.Play();
+                }
+                else
+                    audioSrc.Stop();*/
+
     }
 
     void FixedUpdate()

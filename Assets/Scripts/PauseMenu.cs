@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-   public static bool GameIsPaused = false;
+    public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     // Update is called once per frame
+    void Start()
+    {
+        bool cameFromMainGame = PlayerData.instance.getCameFromMainGame();
+        if (cameFromMainGame)
+            Pause();
+    }
+
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -44,10 +51,36 @@ public class PauseMenu : MonoBehaviour
 
     }
 
-    public void QuitGame ()
+    public void ToSettings()
     {
-       Debug.Log("Quitting game...");
-       Application.Quit();
+        Debug.Log("Pressed settings");
+        PlayerData.instance.setCameFromMainGame(true);
+        SceneManager.LoadScene("Setting Menu");
+
+    }
+
+    public void ToAchievements()
+    {
+        Debug.Log("Pressed achievements");
+        PlayerData.instance.setCameFromMainGame(true);
+        SceneManager.LoadScene("Achievements");
+
+    }
+
+    public void ToMainMenu()
+    {
+        Debug.Log("Pressed to main menu");
+        Time.timeScale = 1f;
+        PlayerData.instance.setCameFromMainGame(false);
+        SceneManager.LoadScene("MainMenu");
+
+    }
+
+    public void SaveGame()
+    {
+        // save code - attention to save slot
+        Debug.Log("Saved");
+
     }
 
 }

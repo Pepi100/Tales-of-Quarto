@@ -28,6 +28,11 @@ namespace Inventory
             PrepareInventoryData();
         }
 
+        public InventorySO getData()
+        {
+            return _inventoryData;
+        }
+
         public void OpenInventory(InputAction.CallbackContext context)
         {
 
@@ -77,7 +82,7 @@ namespace Inventory
             {
                 sb.Append($"{inventoryItem.itemState[i].itemParameter.ParameterName} " +
                     $": {inventoryItem.itemState[i].value} / " +
-                    $"{inventoryItem.item.DefaultParametersList[i].value}");
+                    $"{inventoryItem.item.DefaultParametersList[i].itemParameter.MaxValue}");
                 sb.AppendLine();
             }
             return sb.ToString();
@@ -85,13 +90,13 @@ namespace Inventory
 
         private void HandleSwapItems(int itemIndex1, int itemIndex2)
         {
-            _inventoryData.SwapItems(itemIndex1, itemIndex2);   
+            _inventoryData.SwapItems(itemIndex1, itemIndex2);
         }
 
         private void HandleDragging(int itemIndex)
         {
             InventoryItem inventoryItem = _inventoryData.GetItemAt(itemIndex);
-            if(inventoryItem.IsEmpty)
+            if (inventoryItem.IsEmpty)
             {
                 return;
             }
@@ -102,21 +107,21 @@ namespace Inventory
         private void HandleItemActionRequest(int itemIndex)
         {
             InventoryItem inventoryItem = _inventoryData.GetItemAt(itemIndex);
-            if(inventoryItem.IsEmpty)
+            if (inventoryItem.IsEmpty)
                 return;
 
             IItemAction itemAction = inventoryItem.item as IItemAction;
-            if(itemAction != null)
+            if (itemAction != null)
             {
                 _inventoryUI.ShowItemAction(itemIndex);
                 _inventoryUI.AddAction(itemAction.ActionName, () => PerformAction(itemIndex));
             }
 
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if(destroyableItem != null)
+            if (destroyableItem != null)
             {
                 _inventoryUI.AddAction("Drop", () => DropItem(itemIndex, inventoryItem.quantity));
-            }   
+            }
         }
 
         private void DropItem(int itemIndex, int quantity)
@@ -129,23 +134,23 @@ namespace Inventory
         public void PerformAction(int itemIndex)
         {
             InventoryItem inventoryItem = _inventoryData.GetItemAt(itemIndex);
-            if(inventoryItem.IsEmpty)
+            if (inventoryItem.IsEmpty)
                 return;
 
             IDestroyableItem destroyableItem = inventoryItem.item as IDestroyableItem;
-            if(destroyableItem != null)
+            if (destroyableItem != null)
             {
                 _inventoryData.RemoveItem(itemIndex, 1);
             }
 
             IItemAction itemAction = inventoryItem.item as IItemAction;
-            if(itemAction != null)
+            if (itemAction != null)
             {
                 itemAction.PerformAction(gameObject, inventoryItem.itemState);
                 _audioSource.PlayOneShot(itemAction.actionSFX);
-                if(_inventoryData.GetItemAt(itemIndex).IsEmpty)
+                if (_inventoryData.GetItemAt(itemIndex).IsEmpty)
                     _inventoryUI.ResetSelection();
-            }  
+            }
         }
 
         private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
@@ -177,5 +182,6 @@ namespace Inventory
                 _inventoryData.AddItem(item);
             }
         }
+
     }
 }

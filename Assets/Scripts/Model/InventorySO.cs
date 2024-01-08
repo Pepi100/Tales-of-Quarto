@@ -48,8 +48,8 @@ namespace Inventory.Model
         public void AddItem(InventoryItem item)
         {
             AddItem(item.item, item.quantity);
-        }   
-        
+        }
+
         public void RemoveItem(int itemIndex, int amount)
         {
             if (_inventoryItems.Count > itemIndex)
@@ -71,7 +71,7 @@ namespace Inventory.Model
         {
             Dictionary<int, InventoryItem> returnValue =
                 new Dictionary<int, InventoryItem>();
-            for(int i = 0; i < _inventoryItems.Count; i++)
+            for (int i = 0; i < _inventoryItems.Count; i++)
             {
                 if (_inventoryItems[i].IsEmpty)
                     continue;
@@ -89,7 +89,7 @@ namespace Inventory.Model
                 if (_inventoryItems[i].IsEmpty)
                     continue;
 
-                if(_inventoryItems[i].item.ID == item.ID)
+                if (_inventoryItems[i].item.ID == item.ID)
                 {
                     ///find quantity of object x we can take
                     int amountPossibleToTake =
@@ -113,12 +113,68 @@ namespace Inventory.Model
                     }
                 }
             }
-            while(quantity > 0 && IsInventoryFull() == false)
+            while (quantity > 0 && IsInventoryFull() == false)
             {
                 ///facem clamp intre 0 si max
                 int newQuantity = Mathf.Clamp(quantity, 0, item.MaxStackSize);
                 quantity -= newQuantity;
                 AddItemToFirstFreeSlot(item, newQuantity);
+            }
+            return quantity;
+        }
+
+        public bool CheckStackableItem(ItemSO item, int quantity)
+        {
+            int stackedQuantity = 0;
+
+            // Iterate through the inventory to find the stacked quantity of the specified item
+            foreach (var inventoryItem in _inventoryItems)
+            {
+                if (!inventoryItem.IsEmpty && inventoryItem.item.ID == item.ID)
+                {
+                    stackedQuantity += inventoryItem.quantity;
+                }
+            }
+
+            // Check if the stacked quantity is equal to the target quantity
+            return stackedQuantity >= quantity;
+        }
+
+        public int RemoveStackableItem(ItemSO item, int quantity)
+        {
+            for (int i = 0; i < _inventoryItems.Count; i++)
+            {
+                if (_inventoryItems[i].IsEmpty)
+                    continue;
+
+                if (_inventoryItems[i].item.ID == item.ID)
+                {
+                    Debug.Log(_inventoryItems[i].quantity);
+                    Debug.Log(quantity);
+                    ///if we'll have more than the maximum
+                    if (_inventoryItems[i].quantity > quantity)
+                    {
+                        ///set to max and update
+                        _inventoryItems[i] = _inventoryItems[i]
+                            .ChangeQuantity(_inventoryItems[i].quantity - quantity);
+                        InformAboutChange();
+                        return 0;
+                    }
+                    ///if we can take all the objects
+                    else
+                    {
+                        quantity = quantity - _inventoryItems[i].quantity;
+                        RemoveItem(i, _inventoryItems[i].quantity);
+
+                        Debug.Log(quantity);
+                        if (quantity == 0)
+                        {
+                            InformAboutChange();
+                            return 0;
+                        }
+
+                    }
+                }
             }
             return quantity;
         }
@@ -160,7 +216,6 @@ namespace Inventory.Model
         {
             OnInventoryUpdated?.Invoke(GetCurrentInventoryState());
         }
-
 
     }
 
