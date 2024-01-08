@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-
+using System.Security.Cryptography;
 
 namespace Inventory.Model
 {
@@ -34,10 +34,12 @@ namespace Inventory.Model
             for (int i = 0; i< recipeSO.input.Length; i++)
             {
                 GameObject newItem = Instantiate(itemPrefab, transform);
+                Transform itemImage =  newItem.transform.GetChild(0).GetChild(0);
+                itemImage.GetComponent<Image>().sprite = recipeSO.input[i].item.ItemImage;
+                itemImage.gameObject.SetActive(true);
 
-                newItem.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = recipeSO.input[i].item.ItemImage;
-                
-                //newItem.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = recipeSO.input[i].count.ToString();
+                Transform itemCount = newItem.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0);
+                itemCount.GetComponent<TextMeshProUGUI>().text = recipeSO.input[i].count.ToString();
 
 
                 if (i< recipeSO.input.Length - 1 )
@@ -57,8 +59,12 @@ namespace Inventory.Model
             {
                 GameObject newItem = Instantiate(itemPrefab, transform);
 
-                newItem.transform.GetChild(0).GetComponent<Image>().sprite = recipeSO.output[i].item.ItemImage;
-                newItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = recipeSO.output[i].count.ToString();
+                Transform itemImage = newItem.transform.GetChild(0).GetChild(0);
+                itemImage.GetComponent<Image>().sprite = recipeSO.output[i].item.ItemImage;
+                itemImage.gameObject.SetActive(true);
+
+                Transform itemCount = newItem.transform.GetChild(0).GetChild(0).GetChild(0).GetChild(0);
+                itemCount.GetComponent<TextMeshProUGUI>().text = recipeSO.output[i].count.ToString();
 
 
                 if (i < recipeSO.output.Length - 1)
