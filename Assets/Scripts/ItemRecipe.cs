@@ -35,11 +35,12 @@ namespace Inventory.Model
             {
                 GameObject newItem = Instantiate(itemPrefab, transform);
 
-                newItem.transform.GetChild(0).GetComponent<Image>().sprite = recipeSO.input[i].item.ItemImage;
-                newItem.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = recipeSO.input[i].count.ToString();
+                newItem.transform.GetChild(0).GetChild(0).GetComponent<Image>().sprite = recipeSO.input[i].item.ItemImage;
+                
+                //newItem.transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = recipeSO.input[i].count.ToString();
 
 
-                if(i< recipeSO.input.Length - 1 )
+                if (i< recipeSO.input.Length - 1 )
                 {
                     Instantiate(plusSignPrefab, transform);
                 }
