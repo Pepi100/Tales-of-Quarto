@@ -26,6 +26,7 @@ public class PlayerData : MonoBehaviour
 
     private bool[] _achievementsIds = new bool[] { false, true, false, false, false, false, false };
     private bool _cameFromMainGame = false;
+    private bool _isInBossBattle = true;
 
 
     ///Call this method with the id of the achievement to mark as checked
@@ -67,6 +68,11 @@ public class PlayerData : MonoBehaviour
         return z;
     }
 
+    public bool getIsInBossBattle()
+    {
+        return _isInBossBattle;
+    }
+
     public bool getCameFromMainGame()
     {
         return _cameFromMainGame;
@@ -98,6 +104,11 @@ public class PlayerData : MonoBehaviour
     public void setCameFromMainGame(bool val)
     {
         _cameFromMainGame = val;
+    }
+
+    public void setIsInBossBattle(bool isInBossBattle)
+    {
+        _isInBossBattle = isInBossBattle;
     }
 
 }
