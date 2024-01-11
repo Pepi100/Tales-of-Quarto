@@ -15,6 +15,8 @@ namespace Inventory
         [SerializeField]
         private InventorySO _inventoryData;
         [SerializeField]
+        private ItemDatabase _itemDatabase;
+        [SerializeField]
         private AudioClip _dropClip;
 
         [SerializeField]
@@ -35,19 +37,22 @@ namespace Inventory
 
         public void OpenInventory(InputAction.CallbackContext context)
         {
-            if (_inventoryUI.isActiveAndEnabled == false)
+            if (Time.deltaTime != 0.0f)
             {
-                _inventoryUI.Show();
-                foreach (var item in _inventoryData.GetCurrentInventoryState())
+                if (_inventoryUI.isActiveAndEnabled == false)
                 {
-                    _inventoryUI.UpdateData(item.Key,
-                        item.Value.item.ItemImage,
-                        item.Value.quantity);
+                    _inventoryUI.Show();
+                    foreach (var item in _inventoryData.GetCurrentInventoryState())
+                    {
+                        _inventoryUI.UpdateData(item.Key,
+                            item.Value.item.ItemImage,
+                            item.Value.quantity);
+                    }
                 }
-            }
-            else
-            {
-                _inventoryUI.Hide();
+                else
+                {
+                    _inventoryUI.Hide();
+                }
             }
         }
 
@@ -165,13 +170,28 @@ namespace Inventory
         }
         private void PrepareInventoryData()
         {
+            _itemDatabase.InitializeDictioanry();
+
             _inventoryData.Initialize();
             _inventoryData.OnInventoryUpdated += UpdateInventoryUI;
-            foreach (InventoryItem item in initialItems)
+
+            List<InventoryItemSerilization> initialItemsSerialized = PlayerData.instance.getInventoryItems();
+            int pos = -1;
+            foreach (InventoryItemSerilization itemSerialized in initialItemsSerialized)
             {
-                if (item.IsEmpty)
+                pos++;
+                if (itemSerialized.isEmpty())
                     continue;
-                _inventoryData.AddItem(item);
+
+                ItemSO item = _itemDatabase.GetItem(itemSerialized.getId());
+                InventoryItem newItem = new InventoryItem
+                {
+                    item = item,
+                    quantity = itemSerialized.getQuantity(),
+                    itemState = item.DefaultParametersList
+                };
+
+                _inventoryData.AddItemPosition(newItem, pos);
             }
         }
 

@@ -15,31 +15,42 @@ public class CharacterMovement : MonoBehaviour
     bool facingUp = false;
     bool isMoving = false;
     public Vector2 lastMotionVector;
-   
 
+    private bool _gameIsPaused = false;
+
+    private void Start()
+    {
+        transform.position = PlayerData.instance.getPlayerLocation();
+        Debug.Log("Health local " + PlayerData.instance.getHealth().ToString());
+        this.GetComponent<Health>().setCurrentHealth(
+            PlayerData.instance.getHealth());
+    }
 
     public void Move(InputAction.CallbackContext context) =>
         _input =  context.ReadValue<Vector2>();
     private void Update() {
-        var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
-        transform.position += velocity * Time.deltaTime;
-
-        float maxx;
-        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
-            maxx = Mathf.Abs(_input.x);
-        else
-            maxx = Mathf.Abs(_input.y);
-        animator.SetFloat("Speed", maxx);
-
-        if (_input.x != 0 || _input.y != 0)
+        if (Time.deltaTime != 0)
         {
-            lastMotionVector = new Vector2(
-                _input.x,
-                _input.y
-                ).normalized;
+            var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
+            transform.position += velocity * Time.deltaTime;
 
-            animator.SetFloat("lastHorizontal", lastMotionVector.x);
-            animator.SetFloat("lastVertical", lastMotionVector.y);
+            float maxx;
+            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
+                maxx = Mathf.Abs(_input.x);
+            else
+                maxx = Mathf.Abs(_input.y);
+            animator.SetFloat("Speed", maxx);
+
+            if (_input.x != 0 || _input.y != 0)
+            {
+                lastMotionVector = new Vector2(
+                    _input.x,
+                    _input.y
+                    ).normalized;
+
+                animator.SetFloat("lastHorizontal", lastMotionVector.x);
+                animator.SetFloat("lastVertical", lastMotionVector.y);
+            }
         }
 
 
@@ -60,32 +71,35 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (Time.deltaTime != 0.0f)
+        {
 
-        if (_input.y > 0)
-        {
-            animator.SetInteger("Direction", 2);
-            if (!facingUp)
-            { facingUp = !facingUp; }
-            
-        }
-        if (_input.y < 0 )
-        {
-            animator.SetInteger("Direction", 0);
-            if (facingUp)
-            { facingUp = !facingUp; }
-            
-        }
-        if (_input.x != 0 )
-        {
-            animator.SetInteger("Direction", 1);
-        }
-        if (_input.x > 0 && facingLeft)
-        {
-            Flip();
-        }
-        if (_input.x < 0 && !facingLeft)
-        {
-            Flip();
+            if (_input.y > 0)
+            {
+                animator.SetInteger("Direction", 2);
+                if (!facingUp)
+                { facingUp = !facingUp; }
+
+            }
+            if (_input.y < 0)
+            {
+                animator.SetInteger("Direction", 0);
+                if (facingUp)
+                { facingUp = !facingUp; }
+
+            }
+            if (_input.x != 0)
+            {
+                animator.SetInteger("Direction", 1);
+            }
+            if (_input.x > 0 && facingLeft)
+            {
+                Flip();
+            }
+            if (_input.x < 0 && !facingLeft)
+            {
+                Flip();
+            }
         }
 
     }

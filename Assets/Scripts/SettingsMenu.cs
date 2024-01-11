@@ -40,4 +40,11 @@ public class SettingsMenu : MonoBehaviour
         }
 
     }
+
+    public void GoToHelp()
+    {
+        Debug.Log("Going from settings to help menu");
+        SceneManager.LoadScene("HelpMenu");
+
+    }
 }

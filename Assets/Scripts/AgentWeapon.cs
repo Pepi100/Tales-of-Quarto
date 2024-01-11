@@ -15,8 +15,30 @@ public class AgentWeapon : MonoBehaviour, IPointerClickHandler
 
     [SerializeField]
     private List<ItemParameter> _parametersToModify, _itemCurrentState;
-    public event Action<AgentWeapon> OnItemClicked;
 
+    [SerializeField]
+    private ItemDatabase _itemDatabase;
+
+    public event Action<AgentWeapon> OnItemClicked;
+    
+    public void Start()
+    {
+        int id = PlayerData.instance.getWeaponID();
+        if (id == -1) return;
+
+        ItemSO item = _itemDatabase.GetItem(id);
+
+        EquippableItemSO equipableItem = item as EquippableItemSO;
+
+        if (equipableItem != null)
+        {
+            SetWeapon(equipableItem, equipableItem.DefaultParametersList);
+        }
+        else
+        {
+            Debug.LogError("Item is not an EquipableItemSO.");
+        }
+    }
     public void SetWeapon(EquippableItemSO weaponItemSO, List<ItemParameter> itemState)
     {
         if (_weapon != null)
@@ -26,7 +48,7 @@ public class AgentWeapon : MonoBehaviour, IPointerClickHandler
 
         this._weapon = weaponItemSO;
         this._itemCurrentState = new List<ItemParameter>(itemState);
-        ModifyParameters();
+        ///ModifyParameters();
     }
 
     private void ModifyParameters()
@@ -44,6 +66,14 @@ public class AgentWeapon : MonoBehaviour, IPointerClickHandler
                 };
             }
         }
+    }
+
+    public int GetItemID()
+    {
+        if(_weapon != null)
+            return _weapon.ID;
+
+        return -1;
     }
 
     public void OnPointerClick(PointerEventData pointerData)

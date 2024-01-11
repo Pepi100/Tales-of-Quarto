@@ -21,7 +21,6 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        _currentHealth = 0.5f;
         healthBar.SetHealth(_currentHealth);
     }
 
@@ -51,6 +50,16 @@ public class Health : MonoBehaviour
         }
         healthBar.SetHealth(_currentHealth);
         Debug.Log("RECOVER new health = " + _currentHealth.ToString());
+    }
+
+    public float getCurrentHealth()
+    {
+        return _currentHealth;
+    }
+
+    public void setCurrentHealth(float valHealth)
+    {
+        _currentHealth = valHealth;
     }
 
     /*
