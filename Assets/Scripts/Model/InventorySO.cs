@@ -16,6 +16,11 @@ namespace Inventory.Model
 
         public event Action<Dictionary<int, InventoryItem>> OnInventoryUpdated;
 
+        public List<InventoryItem> getInventoryItems()
+        {
+            return _inventoryItems;
+        }
+
         public void Initialize()
         {
             _inventoryItems = new List<InventoryItem>();
@@ -48,6 +53,11 @@ namespace Inventory.Model
         public void AddItem(InventoryItem item)
         {
             AddItem(item.item, item.quantity);
+        }
+
+        public void AddItemPosition(InventoryItem item, int pos)
+        {
+            _inventoryItems[pos] = item;
         }
 
         public void RemoveItem(int itemIndex, int amount)

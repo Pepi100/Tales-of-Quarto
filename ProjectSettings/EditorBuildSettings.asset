@@ -18,6 +18,18 @@ EditorBuildSettings:
     path: Assets/Scenes/Setting Menu.unity
     guid: 791c08bb5a6a795488f014eeda6406ea
   - enabled: 1
-    path: Assets/Achievements/Scenes/Achievements.unity
+    path: Assets/Scenes/Achievements.unity
     guid: 2191dd81c959f824aa8bae45a55c9aa4
+  - enabled: 1
+    path: Assets/Scenes/HelpMenu.unity
+    guid: 194a5af27ec3e164e9d46b1d25fca665
+  - enabled: 1
+    path: Assets/Scenes/SaveMenu.unity
+    guid: 966547f43cd55c946bffb4553db85891
+  - enabled: 1
+    path: Assets/Scenes/LoseScene.unity
+    guid: f2bc28c3bb69bd24b8310c2ac785247c
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: db084bc903a680248bae64bd6445f57f
   m_configObjects: {}

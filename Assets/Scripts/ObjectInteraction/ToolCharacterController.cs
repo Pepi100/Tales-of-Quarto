@@ -24,7 +24,7 @@ public class ToolCharacterController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Time.deltaTime != 0.0f && Input.GetMouseButtonDown(0))
         {
             UseTool();
         }

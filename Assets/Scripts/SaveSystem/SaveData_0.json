@@ -1,0 +1,194 @@
+{
+  "_playerPosition": {
+    "_x": 0,
+    "_y": 0,
+    "_z": 0
+  },
+  "_positionTrees": [
+    {
+      "_x": -1.7953338623046875,
+      "_y": 2.1576006412506104,
+      "_z": 0
+    }
+  ],
+  "_positionStones": [
+    {
+        "_x": -9.488524436950684,
+        "_y": -9.87096118927002,
+        "_z": 0.0
+    },
+    {
+        "_x": -11.121565818786621,
+        "_y": -12.33390998840332,
+        "_z": 0.0
+    },
+    {
+        "_x": -2.3673925399780275,
+        "_y": -10.513469696044922,
+        "_z": 0.0
+    },
+    {
+        "_x": -3.6256375312805177,
+        "_y": -12.440994262695313,
+        "_z": 0.0
+    },
+    {
+        "_x": -0.49341046810150149,
+        "_y": -12.521306991577149,
+        "_z": 0.0
+    },
+    {
+        "_x": -0.6272664070129395,
+        "_y": -6.658420562744141,
+        "_z": 0.0
+    },
+    {
+        "_x": 3.4954941272735597,
+        "_y": -5.4804887771606449,
+        "_z": 0.0
+    },
+    {
+        "_x": 5.5568742752075199,
+        "_y": -11.396918296813965,
+        "_z": 0.0
+    },
+    {
+        "_x": 8.341076850891114,
+        "_y": -7.56864070892334,
+        "_z": 0.0
+    }
+  ],
+  "_inventoryItems": [
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+      "_quantity": 0,
+      "_id": 0,
+      "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    },
+    {
+        "_quantity": 0,
+        "_id": 0,
+        "_isEmpty": true
+    }
+],
+"_weaponID" : -1,
+"_achievementsIds": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+],
+"_playerHealth": 1.0
+}

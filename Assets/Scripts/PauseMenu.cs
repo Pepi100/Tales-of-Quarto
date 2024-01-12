@@ -7,6 +7,8 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    [SerializeField]
+    private SoftSave _softSave;
     // Update is called once per frame
     void Start()
     {
@@ -21,11 +23,12 @@ public class PauseMenu : MonoBehaviour
         {
             if(GameIsPaused)
             {
-               Resume();
+                Resume();
             }
             else
             {
-               Pause();
+                _softSave.SoftSaveData();
+                Pause();
             }
         }
     }

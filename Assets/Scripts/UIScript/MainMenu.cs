@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Pressed play");
         //SaveSystem.LoadPlayer();
-        SceneManager.LoadScene("MainGame");
+        SceneManager.LoadScene("SaveMenu");
     }
 
     public void Settings()
