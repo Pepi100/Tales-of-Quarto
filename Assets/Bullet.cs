@@ -14,8 +14,7 @@ public class Bullet : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D hitInfo)
-    {
-        Debug.Log(hitInfo.name);
+    {;
         Viking viking = hitInfo.GetComponent<Viking>();
         if (viking != null)
         {
