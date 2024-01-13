@@ -9,10 +9,21 @@ using UnityEngine.UI;
 public class SettingsMenu : MonoBehaviour
 {
 
-   public AudioMixer audioMixer;
-   public void SetVolume (float volume)
+    private GameObject ObjectMusic;
+    private AudioSource AudioSource;
+    [SerializeField]
+    public Slider slider;
+
+    public void Start()
     {
-       audioMixer.SetFloat("volume", volume);
+        ObjectMusic = GameObject.FindWithTag("GameMusic");
+        AudioSource = ObjectMusic.GetComponent<AudioSource>();
+        slider.value = AudioSource.volume;
+    }
+
+    public void SetVolume ()
+    {
+        AudioSource.volume = slider.value;
     }
 
     public void SetQuality (int qualityIndex)
