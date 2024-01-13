@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     private float _currentHealth;
     [SerializeField]
     public UIHealthBar healthBar;
-
+    public Animator animator;
     /*
     [SerializeField] private GameObject bloodParticle;
 
@@ -22,17 +22,19 @@ public class Health : MonoBehaviour
     private void Start()
     {
         _currentHealth = 0.5f;
-        healthBar.SetHealth(_currentHealth);
+        //healthBar.SetHealth(_currentHealth);
     }
 
     public void Reduce(int damage)
     {
         _currentHealth -= damage / _maxHealth;
-        healthBar.SetHealth(_currentHealth);
+        //healthBar.SetHealth(_currentHealth);
         Debug.Log("HIT new health = " + _currentHealth.ToString());
         //CreateHitFeedback();
         if (_currentHealth <= 0)
         {
+            animator.SetTrigger("Die");
+            
             Die();
         }
     }
@@ -49,7 +51,7 @@ public class Health : MonoBehaviour
         {
             _currentHealth = newHealth / _maxHealth;
         }
-        healthBar.SetHealth(_currentHealth);
+        //healthBar.SetHealth(_currentHealth);
         Debug.Log("RECOVER new health = " + _currentHealth.ToString());
     }
 
@@ -71,7 +73,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log("Died");
-        _currentHealth = 1;
+        //SceneManager.LoadScene("Boss Fight");
     }
 }
 

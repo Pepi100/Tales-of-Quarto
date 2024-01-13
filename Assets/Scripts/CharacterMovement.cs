@@ -16,27 +16,43 @@ public class CharacterMovement : MonoBehaviour
     bool facingUp = false;
     bool isMoving = false;
     public Vector2 lastMotionVector;
-   
-    public void Awake()
+
+    public float jumpRate = 0.25f;
+    float nextJumpTime = 0f;
+
+    public void Start()
     {
         _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1 ;
+        _inBossBattle = 1;
     }
 
     public void Move(InputAction.CallbackContext context) =>
         _input =  context.ReadValue<Vector2>();
-    private void Update() 
+    private void Update()
     {
         float maxx;
-        var velocity = new Vector3(_input.x, _input.y * _inBossBattle, 0.0f) * _maxSpeed;
-        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y * _inBossBattle))
+        var velocity = new Vector3(_input.x, _input.y * (1 - _inBossBattle), 0.0f) * _maxSpeed;
+        //move
+        transform.position += velocity * Time.deltaTime;
+        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y * (1 - _inBossBattle)))
         {
             maxx = Mathf.Abs(_input.x);
         }
         else
         {
-            maxx = Mathf.Abs(_input.y * _inBossBattle);
+            maxx = Mathf.Abs(_input.y * (1 - _inBossBattle));
         }
         animator.SetFloat("Speed", maxx);
+
+        //jump
+        if (Time.time >= nextJumpTime)
+        {
+            if (_inBossBattle == 1 && Input.GetKeyDown(KeyCode.Space))
+            {
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 11), ForceMode2D.Impulse);
+                nextJumpTime = Time.time + 1f / jumpRate;
+            }
+        }
 
         if (_input.x != 0 || _input.y != 0)
         {
@@ -45,8 +61,8 @@ public class CharacterMovement : MonoBehaviour
                 _input.y
                 ).normalized;
 
-            animator.SetFloat("lastHorizontal", lastMotionVector.x);
-            animator.SetFloat("lastVertical", lastMotionVector.y);
+/*            animator.SetFloat("lastHorizontal", lastMotionVector.x);
+            animator.SetFloat("lastVertical", lastMotionVector.y);*/
         }
 
 
@@ -67,14 +83,14 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (_input.y * _inBossBattle > 0)
+        if (_input.y * (1 - _inBossBattle) > 0)
         {
             animator.SetInteger("Direction", 2);
             if (!facingUp)
             { facingUp = !facingUp; }
 
         }
-        if (_input.y * _inBossBattle < 0)
+        if (_input.y * (1 - _inBossBattle) < 0)
         {
             animator.SetInteger("Direction", 0);
             if (facingUp)
@@ -98,10 +114,9 @@ public class CharacterMovement : MonoBehaviour
 
     void Flip()
     {
-        
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
+
+        transform.Rotate(0f, 180f, 0f);
+
         facingLeft = !facingLeft;
     }
 }

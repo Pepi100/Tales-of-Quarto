@@ -232,6 +232,41 @@ Transform:
   - {fileID: 858442767}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &176851280
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 176851281}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &176851281
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176851280}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 575053864}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.606, y: -0.161}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &285487858
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +407,8 @@ GameObject:
   - component: {fileID: 575053854}
   - component: {fileID: 575053853}
   - component: {fileID: 575053865}
-  m_Layer: 0
+  - component: {fileID: 575053866}
+  m_Layer: 7
   m_Name: Player (1)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -546,7 +582,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 1
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -603,6 +639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 575053853}
   _maxSpeed: 5
+  lastMotionVector: {x: 0, y: 0}
+  jumpRate: 0.8
 --- !u!114 &575053860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,7 +648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575053852}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28e7f91ca39176d4eaec44894c18fc58, type: 3}
   m_Name: 
@@ -644,6 +682,7 @@ MonoBehaviour:
   _maxHealth: 10
   _currentHealth: 5
   healthBar: {fileID: 0}
+  animator: {fileID: 575053853}
 --- !u!114 &575053862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,6 +740,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 8d67ea79-7190-4235-8788-469fa3d51035
     m_ActionName: Player/InventoryActions[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 73303c4b-ab41-42c4-a70e-3e010d3699b9
+    m_ActionName: Player/CraftingActions[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -771,6 +814,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 285487859}
+  - {fileID: 176851281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -796,8 +840,22 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 64
-  attackDamage: 40
+  attackDamage: 20
   attackRate: 2
+--- !u!114 &575053866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575053852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb753fa86b870c047a4ec60b23472dca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 176851281}
+  bulletPrefab: {fileID: 1046213209567958493, guid: 1571e5928a0f6b444b768001a38d9bd5, type: 3}
 --- !u!1 &858442764
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,8 +1088,10 @@ GameObject:
   - component: {fileID: 1573414639}
   - component: {fileID: 1573414643}
   - component: {fileID: 1573414644}
+  - component: {fileID: 1573414645}
+  - component: {fileID: 1573414646}
   m_Layer: 6
-  m_Name: Viking
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1211,6 +1271,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1573414643}
   maxHealt: 100
+--- !u!114 &1573414645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573414638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a611418c534ec334ea51b54b72f53cc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 575053864}
+  isFlipped: 0
+--- !u!114 &1573414646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573414638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8c362a4fead0540834c8c0c8727e52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDamage: 1
+  enragedAttackDamage: 2
+  attackOffset: {x: -1, y: 0.5, z: 0}
+  attackRange: 1
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &1769291542
 GameObject:
   m_ObjectHideFlags: 0

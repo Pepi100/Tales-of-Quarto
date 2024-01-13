@@ -26,7 +26,7 @@ public class PlayerData : MonoBehaviour
 
     private bool[] _achievementsIds = new bool[] { false, true, false, false, false, false, false };
     private bool _cameFromMainGame = false;
-    private bool _isInBossBattle = true;
+    private bool _isInBossBattle = false;
 
 
     ///Call this method with the id of the achievement to mark as checked
