@@ -118,7 +118,7 @@ TextureImporter:
         width: 73
         height: 121
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: indian_woman_1
       rect:
         serializedVersion: 2
-        x: 137
+        x: 134
         y: 0
-        width: 73
-        height: 117
+        width: 76
+        height: 120
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
