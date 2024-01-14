@@ -28,8 +28,10 @@ public class CharacterMovement : MonoBehaviour
     {
         _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1;
         _inBossBattle = 1;
-
-        transform.position = PlayerData.instance.getPlayerLocation();
+        if (_inBossBattle == 0)
+        {
+            transform.position = PlayerData.instance.getPlayerLocation();
+        }
         Debug.Log("Health local " + PlayerData.instance.getHealth().ToString());
         this.GetComponent<Health>().setCurrentHealth(
             PlayerData.instance.getHealth());
@@ -99,7 +101,7 @@ public class CharacterMovement : MonoBehaviour
             { facingUp = !facingUp; }
 
         }
-        if (_input.y * (1 - _inBossBattle) < 0)
+        if (_input.y * (1 - _inBossBattle) <= 0)
         {
             animator.SetInteger("Direction", 0);
             if (facingUp)
