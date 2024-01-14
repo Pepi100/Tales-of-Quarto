@@ -1271,6 +1271,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1573414643}
   maxHealt: 100
+  Invulnerable: 0
+  firstEnrage: 1
 --- !u!114 &1573414645
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -9,7 +9,8 @@ public class Viking : MonoBehaviour
     int currentHealth;
     private BoxCollider2D boxCollider;
     private Rigidbody2D rb;
-
+    public bool Invulnerable = false;
+    public bool firstEnrage = true;
 
     void Start()
     {
@@ -18,12 +19,18 @@ public class Viking : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        if (Invulnerable)
+        {
+            return;
+        }
+
         currentHealth -= damage;
 
         animator.SetTrigger("Hurt");
 
-        if(currentHealth <= 50)
+        if(currentHealth <= 10 && firstEnrage)
         {
+            firstEnrage = false;
             animator.SetTrigger("Enrage");
         }
 
