@@ -16,16 +16,19 @@ public class CharacterMovement : MonoBehaviour
     bool facingUp = false;
     bool isMoving = false;
     public Vector2 lastMotionVector;
-   
-    public void Awake()
-    {
-        _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1 ;
-    }
+
+    public float jumpRate = 0.25f;
+    float nextJumpTime = 0f;
+
+ 
 
     private bool _gameIsPaused = false;
 
     private void Start()
     {
+        _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1;
+        _inBossBattle = 1;
+
         transform.position = PlayerData.instance.getPlayerLocation();
         Debug.Log("Health local " + PlayerData.instance.getHealth().ToString());
         this.GetComponent<Health>().setCurrentHealth(
@@ -34,29 +37,41 @@ public class CharacterMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context) =>
         _input =  context.ReadValue<Vector2>();
-    private void Update() {
-        if (Time.deltaTime != 0)
+    private void Update()
+    {
+        float maxx;
+        var velocity = new Vector3(_input.x, _input.y * (1 - _inBossBattle), 0.0f) * _maxSpeed;
+        //move
+        transform.position += velocity * Time.deltaTime;
+        if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y * (1 - _inBossBattle)))
         {
-            var velocity = new Vector3(_input.x, _input.y, 0.0f) * _maxSpeed;
-            transform.position += velocity * Time.deltaTime;
+            maxx = Mathf.Abs(_input.x);
+        }
+        else
+        {
+            maxx = Mathf.Abs(_input.y * (1 - _inBossBattle));
+        }
+        animator.SetFloat("Speed", maxx);
 
-            float maxx;
-            if (Mathf.Abs(_input.x) > Mathf.Abs(_input.y))
-                maxx = Mathf.Abs(_input.x);
-            else
-                maxx = Mathf.Abs(_input.y);
-            animator.SetFloat("Speed", maxx);
-
-            if (_input.x != 0 || _input.y != 0)
+        //jump
+        if (Time.time >= nextJumpTime)
+        {
+            if (_inBossBattle == 1 && Input.GetKeyDown(KeyCode.Space))
             {
-                lastMotionVector = new Vector2(
-                    _input.x,
-                    _input.y
-                    ).normalized;
-
-                animator.SetFloat("lastHorizontal", lastMotionVector.x);
-                animator.SetFloat("lastVertical", lastMotionVector.y);
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 11), ForceMode2D.Impulse);
+                nextJumpTime = Time.time + 1f / jumpRate;
             }
+        }
+
+        if (_input.x != 0 || _input.y != 0)
+        {
+            lastMotionVector = new Vector2(
+                _input.x,
+                _input.y
+                ).normalized;
+
+/*            animator.SetFloat("lastHorizontal", lastMotionVector.x);
+            animator.SetFloat("lastVertical", lastMotionVector.y);*/
         }
 
 
@@ -77,21 +92,18 @@ public class CharacterMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Time.deltaTime != 0.0f)
+        if (_input.y * (1 - _inBossBattle) > 0)
         {
+            animator.SetInteger("Direction", 2);
+            if (!facingUp)
+            { facingUp = !facingUp; }
 
-            if (_input.y > 0)
-            {
-                animator.SetInteger("Direction", 2);
-                if (!facingUp)
-                { facingUp = !facingUp; }
-
-            }
-            if (_input.y < 0)
-            {
-                animator.SetInteger("Direction", 0);
-                if (facingUp)
-                { facingUp = !facingUp; }
+        }
+        if (_input.y * (1 - _inBossBattle) < 0)
+        {
+            animator.SetInteger("Direction", 0);
+            if (facingUp)
+            { facingUp = !facingUp;
 
             }
             if (_input.x != 0)
@@ -112,10 +124,9 @@ public class CharacterMovement : MonoBehaviour
 
     void Flip()
     {
-        
-        Vector3 currentScale = gameObject.transform.localScale;
-        currentScale.x *= -1;
-        gameObject.transform.localScale = currentScale;
+
+        transform.Rotate(0f, 180f, 0f);
+
         facingLeft = !facingLeft;
     }
 }
