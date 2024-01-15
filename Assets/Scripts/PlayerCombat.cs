@@ -34,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
         //Damage enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Viking>().TakeDamage(attackDamage);
+            enemy.GetComponent<Pig>().TakeDamage(attackDamage);
         }
     }
 
