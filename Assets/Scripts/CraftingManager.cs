@@ -10,13 +10,18 @@ namespace Inventory.Model
 
     public class CraftingManager : MonoBehaviour
     {
+        public static CraftingManager Instance {  get; private set; }
+
+        private Dictionary<int, InventoryItem> items = new Dictionary<int, InventoryItem>();
+
         [SerializeField]
         private ItemRecipeSO[] recipes;
         [SerializeField]
         private GameObject recipePrefab;
         [SerializeField]
         private Transform recipeParent;
-
+        [SerializeField]
+        private InventorySO _inventoryData;
 
         // Start is called before the first frame update
         void Start2()
@@ -61,18 +66,43 @@ namespace Inventory.Model
             }
         }
 
-        // Update is called once per frame
-        void Update()
+        private void Awake()
         {
+
+            if(Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
 
         }
 
+        int found = 0;
 
-        private void UpdateRecipeUI()
+        public bool CanCraftRecipe(ItemRecipeSO recipeSO)
         {
+            items = InventoryController.Instance.GetAllItems();
 
-            
+
+
+            foreach (ItemTypeAndCount needed in recipeSO.input)
+            {
+                foreach (var item in items)
+                {
+                    if (needed.item == item.Value.item && needed.count >= item.Value.quantity)
+                        found++;
+                }
+            }
+
+            return found >= recipeSO.input.Length;
+
+
         }
+
 
 
 

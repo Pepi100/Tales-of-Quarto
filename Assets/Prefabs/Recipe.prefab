@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4692578260950059171}
   - component: {fileID: 2203342685822047547}
   - component: {fileID: 8223325520471121569}
+  - component: {fileID: -4736102656839419741}
   m_Layer: 5
   m_Name: Recipe
   m_TagString: Untagged
@@ -79,3 +80,64 @@ MonoBehaviour:
   itemPrefab: {fileID: 2081544569000889683, guid: f0c37acf466346941a4a77904c177df8, type: 3}
   plusSignPrefab: {fileID: 462850769887786348, guid: d455b3a0ac13ca74bb39f1f84fe05a65, type: 3}
   equalSignPrefab: {fileID: 2721364327794354371, guid: 76550fb4b3f726e45aacf73af4a6914d, type: 3}
+--- !u!114 &-4736102656839419741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8399736448870887903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8223325520471121569}
+          m_TargetAssemblyTypeName: Inventory.Model.ItemRecipe, Assembly-CSharp
+          m_MethodName: OnPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8223325520471121569}
+          m_TargetAssemblyTypeName: Inventory.Model.ItemRecipe, Assembly-CSharp
+          m_MethodName: OnPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8223325520471121569}
+          m_TargetAssemblyTypeName: Inventory.Model.ItemRecipe, Assembly-CSharp
+          m_MethodName: OnPointerClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2

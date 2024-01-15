@@ -12,6 +12,10 @@ namespace Inventory
 
     public class InventoryController : MonoBehaviour
     {
+
+        public static InventoryController Instance {  get; private set; }
+        public List<ItemTypeAndCount> items = new List<ItemTypeAndCount>();
+
         [SerializeField]
         private UIInventoryPage _inventoryUI;
         [SerializeField]
@@ -27,7 +31,29 @@ namespace Inventory
 
         bool isCraftingOpened;
 
-        
+        private void Awake()
+        {
+
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+        }
+
+
+        public Dictionary<int, InventoryItem> GetAllItems()
+        {
+
+
+            return _inventoryData.GetCurrentInventoryState();
+            
+        }
 
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -205,7 +231,6 @@ namespace Inventory
 
         }
 
-
-        
+              
     }
 }
