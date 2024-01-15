@@ -811,7 +811,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575053852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1063,7 +1063,9 @@ MonoBehaviour:
     _y: 0
     _z: 0
   _positionTrees: []
+  _positionFlowers: []
   _positionStones: []
+  _positionRedStones: []
   _inventoryItems: []
   _weaponID: 0
   _achievementsIds: 00000000000000

@@ -22,6 +22,8 @@ namespace Inventory.Model
         private Transform recipeParent;
         [SerializeField]
         private InventorySO _inventoryData;
+        [SerializeField]
+        private InventoryController _inventoryController;
 
         // Start is called before the first frame update
         void Start2()
@@ -85,7 +87,7 @@ namespace Inventory.Model
 
         public bool CanCraftRecipe(ItemRecipeSO recipeSO)
         {
-            items = InventoryController.Instance.GetAllItems();
+            items = _inventoryController.GetAllItems();
 
 
 

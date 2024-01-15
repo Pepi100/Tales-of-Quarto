@@ -195,5 +195,11 @@ namespace Inventory
             }
         }
 
+        public Dictionary<int, InventoryItem> GetAllItems()
+        {
+            return _inventoryData.GetCurrentInventoryState();
+
+        }
+
     }
 }
