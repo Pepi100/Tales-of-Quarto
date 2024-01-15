@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class Viking : MonoBehaviour
 {
@@ -40,6 +42,14 @@ public class Viking : MonoBehaviour
             Die();
         }
     }
+    public IEnumerator Wait3()
+    {
+        Time.timeScale = 1.0f;
+        Debug.Log("Waiting for 3 seconds...");
+        yield return new WaitForSeconds(3);
+        Debug.Log("Loading WinScene...");
+        SceneManager.LoadScene("WinScene");
+    }
     void Die()
     {
         animator.SetBool("IsDead", true);
@@ -48,6 +58,8 @@ public class Viking : MonoBehaviour
         rb.constraints = RigidbodyConstraints2D.FreezePositionX;
         //rb.constraints = RigidbodyConstraints2D.FreezeRotation;
         this.enabled = false;
+        SceneManager.LoadScene("WinScene");
+        //Wait3();
 
     }
 }

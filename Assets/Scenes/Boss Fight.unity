@@ -612,6 +612,7 @@ MonoBehaviour:
   - itemParameter: {fileID: 11400000, guid: c76d2daa128cb7f44a348b9de4436746, type: 2}
     value: -10
   _itemCurrentState: []
+  _itemDatabase: {fileID: 0}
 --- !u!114 &575053858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -655,6 +656,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inventoryUI: {fileID: 0}
   _inventoryData: {fileID: 11400000, guid: 351a94bc06f504f498abca55dabc8766, type: 2}
+  _itemDatabase: {fileID: 0}
   _dropClip: {fileID: 8300000, guid: 7e8d475fee179f6429755a5313ed94ae, type: 3}
   _audioSource: {fileID: 575053854}
   initialItems:
@@ -809,7 +811,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 575053852}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.019854546}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1056,9 +1058,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064b00cacdbd1bc43bb0308d18575f98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x: 0
-  y: 0
-  z: 0
+  _playerPosition:
+    _x: 0
+    _y: 0
+    _z: 0
+  _positionTrees: []
+  _positionStones: []
+  _inventoryItems: []
+  _weaponID: 0
+  _achievementsIds: 00000000000000
+  _playerHealth: 5
 --- !u!4 &974321407
 Transform:
   m_ObjectHideFlags: 0

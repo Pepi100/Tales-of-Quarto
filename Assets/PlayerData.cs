@@ -40,7 +40,7 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     private bool[] _achievementsIds = new bool[] { false, false, false, false, false, false, false };
     [SerializeField]
-    private float _playerHealth = -1;
+    private float _playerHealth = 5;
 
 
     //this will not be saved (because it is not serialized)

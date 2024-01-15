@@ -21,7 +21,7 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
-        healthBar.SetHealth(_currentHealth);
+        //healthBar.SetHealth(_currentHealth);
     }
 
     public void Reduce(int damage)
