@@ -24,11 +24,11 @@ namespace Interaction.ToolHit
                 Vector3 position = transform.position;
                 GameObject go = Instantiate(_pickUpDrop);
                 go.transform.position = position;
-                CutTree();
+                CutStone();
             }
         }
 
-        public void CutTree()
+        public void CutStone()
         {
             Destroy(gameObject);
         }

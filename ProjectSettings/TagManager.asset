@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameMusic
+  - AchievementController
+  - RedStoneAudio
   layers:
   - Default
   - TransparentFX

@@ -18,10 +18,12 @@ public class Health : MonoBehaviour
     [SerializeField] private Renderer renderer;
     [SerializeField] private float flashTime = 0.2f;
     */
+    private AchievementController _achivController;
 
     private void Start()
     {
-        //healthBar.SetHealth(_currentHealth);
+        healthBar.SetHealth(_currentHealth);
+        _achivController = GameObject.FindWithTag("AchievementController").GetComponent<AchievementController>();
     }
 
     public void Reduce(int damage)
@@ -40,6 +42,8 @@ public class Health : MonoBehaviour
 
     public void AddHealth(int healthBoost)
     {
+        _achivController.SetHealed(true);
+
         int health = Mathf.RoundToInt(_currentHealth * _maxHealth);
         int newHealth = health + healthBoost;
         if(newHealth > _maxHealth)

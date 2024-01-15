@@ -1463,10 +1463,12 @@ MonoBehaviour:
     _y: 0
     _z: 0
   _positionTrees: []
+  _positionFlowers: []
   _positionStones: []
+  _positionRedStones: []
   _inventoryItems: []
   _weaponID: 0
-  _achievementsIds: 00010000000000
+  _achievementsIds: 00000000000000
   _playerHealth: 1
 --- !u!4 &1637784768
 Transform:

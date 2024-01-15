@@ -11,6 +11,12 @@ namespace Interaction.ToolHit
         private GameObject _pickUpDrop;
         [SerializeField]
         private float _health = 10;
+        private AchievementController _achivController;
+
+        public void Start()
+        {
+            _achivController = GameObject.FindWithTag("AchievementController").GetComponent<AchievementController>();
+        }
 
         public override void Hit(EquippableItemSO tool)
         {
@@ -30,6 +36,7 @@ namespace Interaction.ToolHit
 
         public void CutTree()
         {
+            _achivController.SetTreeCut(true);
             Destroy(gameObject);
         }
 

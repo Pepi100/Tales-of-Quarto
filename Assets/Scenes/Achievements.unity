@@ -407,9 +407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    6 NOT DONE'
+  m_text: FIND THE DESERT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -543,9 +541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    3 DONE'
+  m_text: CRAFT YOUR FIRST ITEM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -756,9 +752,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    4 DONE'
+  m_text: DESTROY THE RED STONE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -1286,9 +1280,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    1 NOT DONE'
+  m_text: CUT YOUR FIRST TREE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -1561,7 +1553,9 @@ MonoBehaviour:
     _y: 0
     _z: 0
   _positionTrees: []
+  _positionFlowers: []
   _positionStones: []
+  _positionRedStones: []
   _inventoryItems: []
   _weaponID: 0
   _achievementsIds: 00000000000000
@@ -1823,9 +1817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    1 DONE'
+  m_text: CUT YOUR FIRST TREE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -2252,9 +2244,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    4 NOT DONE'
+  m_text: DESTROY THE RED STONE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -2466,9 +2456,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
+  m_text: 'SLAY A
 
-    2 NOT DONE'
+    PIGGLET'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -2736,9 +2726,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    6 DONE'
+  m_text: FIND THE DESERT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -3068,9 +3056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    5 NOT DONE'
+  m_text: HEAL YOUR WOUNDS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -3204,9 +3190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    5 DONE'
+  m_text: HEAL YOUR WOUNDS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -3796,9 +3780,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    2 DONE'
+  m_text: "SLAY A \nPIGGLET"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
@@ -4762,9 +4744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Achievement
-
-    3 NOT DONE'
+  m_text: CRAFT YOUR FIRST ITEM
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
   m_sharedMaterial: {fileID: -479154476630370524, guid: 64c998535f0849f49b387ae2f2bf4370, type: 2}
