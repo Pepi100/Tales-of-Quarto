@@ -27,7 +27,7 @@ public class CharacterMovement : MonoBehaviour
     private void Start()
     {
         _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1;
-        _inBossBattle = 1;
+        _inBossBattle = 0; //pana il facem sa se activeze singur
         if (_inBossBattle == 0)
         {
             transform.position = PlayerData.instance.getPlayerLocation();
