@@ -8,6 +8,8 @@ using Inventory.Model;
 
 namespace Inventory
 {
+
+
     public class InventoryController : MonoBehaviour
     {
         [SerializeField]
@@ -19,6 +21,14 @@ namespace Inventory
 
         [SerializeField]
         private AudioSource _audioSource;
+        [SerializeField]
+        private GameObject craftingParent;
+
+
+        bool isCraftingOpened;
+
+        
+
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
 
@@ -177,5 +187,25 @@ namespace Inventory
                 _inventoryData.AddItem(item);
             }
         }
+
+        void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                isCraftingOpened = !isCraftingOpened; 
+            }
+
+
+            craftingParent.gameObject.SetActive(isCraftingOpened);
+
+           /* if (isCraftingOpened)
+            {
+                CraftingManager.UpdateRecipeUI();
+            }*/
+
+        }
+
+
+        
     }
 }

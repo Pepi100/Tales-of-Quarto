@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ce4b378b68ddf46a0eabb7f301ea47, type: 3}
+  m_Name: Amulet
+  m_EditorClassIdentifier: 
+  recipeName: Amulet
+  input:
+  - item: {fileID: 11400000, guid: d10a64dcc762b314db409aa2d5944043, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: d26d4f34ddba5204fb659ffd0daccb23, type: 2}
+    count: 1
+  - item: {fileID: 11400000, guid: a2849926eb11e9c4cbfc609da220dfe7, type: 2}
+    count: 1
+  output:
+  - item: {fileID: 11400000, guid: fca167845e92a2144851bc7acf588ffe, type: 2}
+    count: 1
