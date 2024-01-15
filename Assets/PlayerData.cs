@@ -32,7 +32,13 @@ public class PlayerData : MonoBehaviour
     [SerializeField]
     private List<Vector3Serilization> _positionTrees = new List<Vector3Serilization>();
     [SerializeField]
+    private List<Vector3Serilization> _positionFlowers = new List<Vector3Serilization>();
+    [SerializeField]
     private List<Vector3Serilization> _positionStones = new List<Vector3Serilization>();
+    [SerializeField]
+    private List<Vector3Serilization> _positionRedStones = new List<Vector3Serilization>();
+    //[SerializeField]
+    //private List<Vector3Serilization> _positionEnemies = new List<Vector3Serilization>();
     [SerializeField]
     private List<InventoryItemSerilization> _inventoryItems = new List<InventoryItemSerilization>();
     [SerializeField]
@@ -55,10 +61,28 @@ public class PlayerData : MonoBehaviour
         _positionTrees.Add(new Vector3Serilization(position));
     }
 
+    public void AddFlower(Vector3 position)
+    {
+        _positionFlowers.Add(new Vector3Serilization(position));
+    }
+
     public void AddStone(Vector3 position)
     {
         _positionStones.Add(new Vector3Serilization(position));
     }
+
+    public void AddRedStone(Vector3 position)
+    {
+        _positionRedStones.Add(new Vector3Serilization(position));
+    }
+
+    /*
+     * 
+    public void AddEnemy(Vector3 position)
+    {
+        _positionEnemies.Add(new Vector3Serilization(position));
+    }
+     */
 
     public void AddItem(InventoryItem item)
     {
@@ -94,10 +118,27 @@ public class PlayerData : MonoBehaviour
         return _positionTrees;
     }
 
+    public List<Vector3Serilization> getPositionFlowers()
+    {
+        return _positionFlowers;
+    }
+
     public List<Vector3Serilization> getPositionStones()
     {
         return _positionStones;
     }
+
+    public List<Vector3Serilization> getPositionRedStones()
+    {
+        return _positionRedStones;
+    }
+
+    /*
+    public List<Vector3Serilization> getPositionEnemies()
+    {
+        return _positionEnemies;
+    }
+     */
 
     public List<InventoryItemSerilization> getInventoryItems()
     {
@@ -147,7 +188,10 @@ public class PlayerData : MonoBehaviour
     public void resetArrays()
     {
         _positionTrees = new List<Vector3Serilization>();
+        _positionFlowers = new List<Vector3Serilization>();
         _positionStones = new List<Vector3Serilization>();
+        _positionRedStones = new List<Vector3Serilization>();
+        //_positionEnemies = new List<Vector3Serilization>();
         _inventoryItems = new List<InventoryItemSerilization>();
     }
 
@@ -164,7 +208,10 @@ public class PlayerData : MonoBehaviour
     {
         _playerPosition = data.getPlayerLocation();
         _positionTrees = data.getPositionTrees();
+        _positionFlowers = data.getPositionFlowers();
         _positionStones = data.getPositionStones();
+        _positionRedStones = data.getPositionRedStones();
+        //_positionEnemies = data.getPositionEnemies();
         _inventoryItems = data.getInventoryItems();
         _weaponID = data.getWeaponID();
         _achievementsIds = data.getAchievements();
@@ -175,7 +222,10 @@ public class PlayerData : MonoBehaviour
     {
         _playerPosition = data.getPlayerLocation();
         _positionTrees = data.getPositionTrees();
+        _positionFlowers = data.getPositionFlowers();
         _positionStones = data.getPositionStones();
+        _positionRedStones = data.getPositionRedStones();
+        //_positionEnemies = data.getPositionEnemies();
         _inventoryItems = data.getInventoryItems();
         _weaponID = data.getWeaponID();
         _playerHealth = data.getHealth();
@@ -196,7 +246,13 @@ public class PlayerSoftDataDTO
     [SerializeField]
     protected List<Vector3Serilization> _positionTrees = new List<Vector3Serilization>();
     [SerializeField]
-    protected List<Vector3Serilization> _positionStones = new List<Vector3Serilization>();
+    private List<Vector3Serilization> _positionFlowers = new List<Vector3Serilization>();
+    [SerializeField]
+    private List<Vector3Serilization> _positionStones = new List<Vector3Serilization>();
+    [SerializeField]
+    private List<Vector3Serilization> _positionRedStones = new List<Vector3Serilization>();
+    //[SerializeField]
+    //private List<Vector3Serilization> _positionEnemies = new List<Vector3Serilization>();
     [SerializeField]
     protected List<InventoryItemSerilization> _inventoryItems = new List<InventoryItemSerilization>();
     [SerializeField]
@@ -206,14 +262,20 @@ public class PlayerSoftDataDTO
 
     public PlayerSoftDataDTO(Vector3Serilization playerPos,
                             List<Vector3Serilization> treesPos,
+                            List<Vector3Serilization> flowersPos,
                             List<Vector3Serilization> stonesPos,
+                            List<Vector3Serilization> redStonesPos,
+                            //List<Vector3Serilization> enemiesPos,
                             List<InventoryItemSerilization> items,
                             int weaponId,
                             float health)
     {
         _playerPosition = playerPos;
         _positionTrees = treesPos;
+        _positionFlowers = flowersPos;
         _positionStones = stonesPos;
+        _positionRedStones = redStonesPos;
+        //_positionEnemies = enemiesPos;
         _inventoryItems = items;
         _weaponID = weaponId;
         _playerHealth = health;
@@ -229,10 +291,27 @@ public class PlayerSoftDataDTO
         return _positionTrees;
     }
 
+    public List<Vector3Serilization> getPositionFlowers()
+    {
+        return _positionFlowers;
+    }
+
     public List<Vector3Serilization> getPositionStones()
     {
         return _positionStones;
     }
+
+    public List<Vector3Serilization> getPositionRedStones()
+    {
+        return _positionRedStones;
+    }
+    
+    /*
+    public List<Vector3Serilization> getPositionEnemies()
+    {
+        return _positionEnemies;
+    }
+    */
 
     public List<InventoryItemSerilization> getInventoryItems()
     {
@@ -259,12 +338,15 @@ public class PlayerDataDTO : PlayerSoftDataDTO
 
     public PlayerDataDTO(Vector3Serilization playerPos, 
                         List<Vector3Serilization> treesPos,
+                        List<Vector3Serilization> flowersPos,
                         List<Vector3Serilization> stonesPos,
+                        List<Vector3Serilization> redStonesPos,
+                        //List<Vector3Serilization> enemiesPos,
                         List<InventoryItemSerilization> items,
                         int weapon,
                         bool[] achivs,
                         float health)
-        :base(playerPos, treesPos, stonesPos, items, weapon, health)
+        :base(playerPos, treesPos, flowersPos, stonesPos, redStonesPos, items, weapon, health) //de adaugat enemiesPos
     {
         _achievementsIds = achivs;
     }

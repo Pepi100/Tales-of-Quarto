@@ -27,7 +27,10 @@ public class SoftSave : MonoBehaviour
         PlayerSoftDataDTO data = new PlayerSoftDataDTO(
             new Vector3Serilization(_player.transform.position),
             _testSpawner.getTreesLocation(),
+            _testSpawner.getFlowersLocation(),
             _testSpawner.getStonesLocation(),
+            _testSpawner.getRedStonesLocation(),
+            //_testSpawner.getEnemiesLocation(),
             currentInventoryItems,
             currentWeapon,
             currentHealth
