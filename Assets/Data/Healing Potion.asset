@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11a7d0837f42f4143b4a7b6017b0f480, type: 3}
-  m_Name: Heart
+  m_Name: Healing Potion
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 64
-  <Name>k__BackingField: Heart
-  <Description>k__BackingField: You can use this for regenerating your health.
-  <ItemImage>k__BackingField: {fileID: 21300000, guid: 4f43f7d68d23505428876fc4af8e8491, type: 3}
+  <Name>k__BackingField: Healing Potion
+  <Description>k__BackingField: Restores a small amount of health when consumed.
+  <ItemImage>k__BackingField: {fileID: 21300000, guid: d954b31a000730f4a8c0cea120b4507c, type: 3}
   <DefaultParametersList>k__BackingField: []
   _modifiersData:
   - statModifier: {fileID: 11400000, guid: e03a9ce3084535944a2dd6a1f648e188, type: 2}

@@ -23,6 +23,37 @@ namespace Inventory.Model
         [SerializeField] GameObject plusSignPrefab;
         [SerializeField] GameObject equalSignPrefab;
 
+        private bool canCraftRecipe;
+
+        public void OnPointerEnter()
+        {
+            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+        }
+
+
+        public void OnPointerExit()
+        {
+            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+        }
+
+        public void OnPointerClick()
+        {
+            if (CraftingManager.Instance.CanCraftRecipe(recipeSO))
+            {
+                //craft
+                InventoryController.Instance.GetAllItems();
+
+
+                canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+                if (!canCraftRecipe)
+                {
+                    //fade
+                }
+
+            }
+        }
+
+
 
         public void OpenInventory(InputAction.CallbackContext context)
         {
