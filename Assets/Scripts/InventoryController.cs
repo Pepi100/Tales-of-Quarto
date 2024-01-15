@@ -8,14 +8,8 @@ using Inventory.Model;
 
 namespace Inventory
 {
-
-
     public class InventoryController : MonoBehaviour
     {
-
-        public static InventoryController Instance {  get; private set; }
-        public List<ItemTypeAndCount> items = new List<ItemTypeAndCount>();
-
         [SerializeField]
         private UIInventoryPage _inventoryUI;
         [SerializeField]
@@ -27,36 +21,6 @@ namespace Inventory
 
         [SerializeField]
         private AudioSource _audioSource;
-        [SerializeField]
-        private GameObject craftingParent;
-
-
-        bool isCraftingOpened;
-
-        private void Awake()
-        {
-
-            if (Instance == null)
-            {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
-
-        }
-
-
-        public Dictionary<int, InventoryItem> GetAllItems()
-        {
-
-
-            return _inventoryData.GetCurrentInventoryState();
-            
-        }
-
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
 
@@ -231,23 +195,5 @@ namespace Inventory
             }
         }
 
-        void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                isCraftingOpened = !isCraftingOpened; 
-            }
-
-
-            craftingParent.gameObject.SetActive(isCraftingOpened);
-
-           /* if (isCraftingOpened)
-            {
-                CraftingManager.UpdateRecipeUI();
-            }*/
-
-        }
-
-              
     }
 }

@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 631d9dd204ea73b4680c81267b08c3f4, type: 3}
+  m_Script: {fileID: 11500000, guid: 11a7d0837f42f4143b4a7b6017b0f480, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 64
   <Name>k__BackingField: Wood
-  <Description>k__BackingField: Wood collected from a fallen tree.
+  <Description>k__BackingField: ' The foundation of your journey. Gathered from the
+    heart of the forest, this versatile material serves as the building block for
+    crafting essential tools and items.'
   <ItemImage>k__BackingField: {fileID: -990569043, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
   <DefaultParametersList>k__BackingField: []
+  _modifiersData: []
+  <actionSFX>k__BackingField: {fileID: 8300000, guid: 7e8d475fee179f6429755a5313ed94ae, type: 3}
