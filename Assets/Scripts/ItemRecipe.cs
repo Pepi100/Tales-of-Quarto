@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using System.Security.Cryptography;
 
 namespace Inventory.Model
@@ -22,40 +23,71 @@ namespace Inventory.Model
         
         [SerializeField] GameObject plusSignPrefab;
         [SerializeField] GameObject equalSignPrefab;
+        [SerializeField]
+        private InventoryController _inventoryController;
 
-        private bool canCraftRecipe;
+
+        public bool CanCraft()
+        {
+            bool canCraft = true;
+
+            foreach(ItemTypeAndCount itc in recipeSO.input ) {
+
+                if( ! _inventoryController.getData().CheckStackableItem(itc.item, itc.count) )
+                {
+                    canCraft = false; 
+                    break;
+                }
+            }
+
+            return canCraft;
+        }
 
         public void OnPointerEnter()
         {
-            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+            
         }
 
 
         public void OnPointerExit()
         {
-            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+            
         }
 
         public void OnPointerClick()
         {
-            if (CraftingManager.Instance.CanCraftRecipe(recipeSO))
-            {
-                //craft
-                //InventoryController.Instance.GetAllItems();
+            Debug.Log("aaaa");
 
-
-                canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
-                if (!canCraftRecipe)
+          
+                if (CanCraft())
                 {
-                    //fade
-                }
+                    foreach (ItemTypeAndCount itc in recipeSO.input)
+                    {
 
+                        _inventoryController.getData().RemoveStackableItem(itc.item, itc.count);
+
+                    }
+
+                    foreach (ItemTypeAndCount itc in recipeSO.output)
+                    {
+
+                        _inventoryController.getData().AddItem(itc.item, itc.count, itc.item.DefaultParametersList);
+
+                    }
+
+
+
+                
             }
+            
+            
         }
 
+     
 
 
- 
+
+
 
         private void Start ()
         {

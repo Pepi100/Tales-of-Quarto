@@ -34,13 +34,7 @@ namespace Inventory
 
 
 
-        public Dictionary<int, InventoryItem> GetAllItems()
-        {
-
-
-            return _inventoryData.GetCurrentInventoryState();
-            
-        }
+       
 
 
         public List<InventoryItem> initialItems = new List<InventoryItem>();
@@ -196,7 +190,13 @@ namespace Inventory
             _inventoryData.Initialize();
             _inventoryData.OnInventoryUpdated += UpdateInventoryUI;
 
-            List<InventoryItemSerilization> initialItemsSerialized = PlayerData.instance.getInventoryItems();
+
+            foreach (InventoryItem item in initialItems)
+            {
+                _inventoryData.AddItem(item);
+            }
+
+            /*List<InventoryItemSerilization> initialItemsSerialized = PlayerData.instance.getInventoryItems();
             int pos = -1;
             foreach (InventoryItemSerilization itemSerialized in initialItemsSerialized)
             {
@@ -213,7 +213,7 @@ namespace Inventory
                 };
 
                 _inventoryData.AddItemPosition(newItem, pos);
-            }
+            }*/
         }
 
         void Update()
@@ -225,11 +225,6 @@ namespace Inventory
 
 
             craftingParent.gameObject.SetActive(isCraftingOpened);
-
-           /* if (isCraftingOpened)
-            {
-                CraftingManager.UpdateRecipeUI();
-            }*/
 
         }
 
