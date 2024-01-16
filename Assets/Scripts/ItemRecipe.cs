@@ -19,7 +19,7 @@ namespace Inventory.Model
         
 
         [SerializeField] GameObject itemPrefab;
-        [SerializeField] GameObject craftingMenu;
+        
         [SerializeField] GameObject plusSignPrefab;
         [SerializeField] GameObject equalSignPrefab;
 
@@ -55,25 +55,7 @@ namespace Inventory.Model
 
 
 
-        public void OpenInventory(InputAction.CallbackContext context)
-        {
-
-           /* if (context.control.displayName == "Q")
-            {
-                if (craftingEnabled == false)
-                {
-
-                    craftingMenu.Show();
-
-                }
-                else
-                {
-                    craftingMenu.Hide();
-                }
-
-            }*/
-
-        }
+ 
 
         private void Start ()
         {
@@ -129,9 +111,6 @@ namespace Inventory.Model
                 {
                     Instantiate(plusSignPrefab, transform);
                 }
-
-
-
 
             }
 
