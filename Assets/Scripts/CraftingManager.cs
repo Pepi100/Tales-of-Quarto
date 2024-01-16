@@ -26,7 +26,7 @@ namespace Inventory.Model
         private InventoryController _inventoryController;
 
         // Start is called before the first frame update
-        void Start2()
+        void Start()
         {
             foreach (Transform child in recipeParent)
             {

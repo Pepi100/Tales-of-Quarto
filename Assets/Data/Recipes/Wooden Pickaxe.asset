@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   recipeName: Wooden Pickaxe
   input:
-  - item: {fileID: 11400000, guid: 7164c15f9df5e974fadfcc6202793c31, type: 2}
+  - item: {fileID: 11400000, guid: f4893523300862a46af80277d97cc490, type: 2}
     count: 2
   output:
   - item: {fileID: 11400000, guid: 7164c15f9df5e974fadfcc6202793c31, type: 2}
