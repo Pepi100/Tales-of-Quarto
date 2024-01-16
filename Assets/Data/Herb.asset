@@ -15,6 +15,6 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 64
   <Name>k__BackingField: Herb
-  <Description>k__BackingField: 
+  <Description>k__BackingField: You can craft with this powerfull healing item.
   <ItemImage>k__BackingField: {fileID: -934348614, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
   <DefaultParametersList>k__BackingField: []

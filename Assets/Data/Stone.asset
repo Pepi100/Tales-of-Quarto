@@ -15,6 +15,6 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 1
   <MaxStackSize>k__BackingField: 64
   <Name>k__BackingField: Stone
-  <Description>k__BackingField: 
+  <Description>k__BackingField: It's just stone. You can craft with it.
   <ItemImage>k__BackingField: {fileID: 1447887299, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
   <DefaultParametersList>k__BackingField: []

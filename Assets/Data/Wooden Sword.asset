@@ -17,5 +17,7 @@ MonoBehaviour:
   <Name>k__BackingField: 
   <Description>k__BackingField: A basic sword suitable for early combat encounters.
   <ItemImage>k__BackingField: {fileID: -1006337752, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
-  <DefaultParametersList>k__BackingField: []
+  <DefaultParametersList>k__BackingField:
+  - itemParameter: {fileID: 11400000, guid: c76d2daa128cb7f44a348b9de4436746, type: 2}
+    value: 30
   <actionSFX>k__BackingField: {fileID: 0}

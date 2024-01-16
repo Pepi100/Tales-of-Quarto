@@ -8,6 +8,11 @@ public class MoveTowards : MonoBehaviour
 
     public bool isFlipped = false;
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
     public void LookAtPlayer()
     {
         Vector3 flipped = transform.localScale;

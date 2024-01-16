@@ -30,7 +30,7 @@ public class SoftSave : MonoBehaviour
             _testSpawner.getFlowersLocation(),
             _testSpawner.getStonesLocation(),
             _testSpawner.getRedStonesLocation(),
-            //_testSpawner.getEnemiesLocation(),
+            _testSpawner.getEnemiesLocation(),
             currentInventoryItems,
             currentWeapon,
             currentHealth

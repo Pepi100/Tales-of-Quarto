@@ -10,6 +10,7 @@ public class LoseMenu : MonoBehaviour
    {
         Debug.Log("Pressed play again");
         //play froma another saved state
+        PlayerData.instance.setGameLoaded(true);
         SceneManager.LoadScene("MainGame");
    }
    public void MainMenu()

@@ -18,6 +18,7 @@ public class ItemDatabase : ScriptableObject
 
         foreach (ItemSO item in itemList)
         {
+            Debug.LogWarning($"Inserted item id {item.ID}.");
             if (item == null)
                 continue;
 

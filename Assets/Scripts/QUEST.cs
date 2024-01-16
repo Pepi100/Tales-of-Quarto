@@ -75,7 +75,8 @@ public class QUEST : MonoBehaviour
                 if (turnedInItems == false)
                 {
                     turnedInItems = true;
-                    DropQuestItems();
+                    if(reward != null)
+                        DropQuestItems();
                 }
             }
             else
