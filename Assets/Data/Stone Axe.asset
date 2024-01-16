@@ -17,5 +17,9 @@ MonoBehaviour:
   <Name>k__BackingField: 
   <Description>k__BackingField: Used for gathering wood more efficiently from trees.
   <ItemImage>k__BackingField: {fileID: -1278266708, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
-  <DefaultParametersList>k__BackingField: []
+  <DefaultParametersList>k__BackingField:
+  - itemParameter: {fileID: 11400000, guid: 35de5e02954ac6941abab589e5122412, type: 2}
+    value: 2
+  - itemParameter: {fileID: 11400000, guid: c76d2daa128cb7f44a348b9de4436746, type: 2}
+    value: 100
   <actionSFX>k__BackingField: {fileID: 0}

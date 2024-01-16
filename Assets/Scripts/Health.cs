@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
     public void Reduce(int damage)
     {
         _currentHealth -= damage / _maxHealth;
-        //healthBar.SetHealth(_currentHealth);
+        healthBar.SetHealth(_currentHealth);
         Debug.Log("HIT new health = " + _currentHealth.ToString());
         //CreateHitFeedback();
         if (_currentHealth <= 0)
@@ -54,7 +54,7 @@ public class Health : MonoBehaviour
         {
             _currentHealth = newHealth / _maxHealth;
         }
-        //healthBar.SetHealth(_currentHealth);
+        healthBar.SetHealth(_currentHealth);
         Debug.Log("RECOVER new health = " + _currentHealth.ToString());
     }
 

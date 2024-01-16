@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.SceneManagement;  
 
 
 public class CharacterMovement : MonoBehaviour
 {
     public Animator animator;
+
+    [SerializeField]
+    private Health _health;
+
     [SerializeField]
     private float _maxSpeed = 3.0f;
     private Vector2 _input;
@@ -26,11 +31,17 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
-        _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 0 : 1;
-        _inBossBattle = 0; //pana il facem sa se activeze singur
+        _inBossBattle = PlayerData.instance.getIsInBossBattle() ? 1 : 0;
+        Debug.Log(PlayerData.instance.getIsInBossBattle());
+        Debug.Log(_inBossBattle);
+
         if (_inBossBattle == 0)
         {
             transform.position = PlayerData.instance.getPlayerLocation();
+        }
+        else
+        {
+            transform.position = new Vector3(-1.44f, -1.4f, -1.0f);
         }
         Debug.Log("Health local " + PlayerData.instance.getHealth().ToString());
         this.GetComponent<Health>().setCurrentHealth(
@@ -41,6 +52,11 @@ public class CharacterMovement : MonoBehaviour
         _input =  context.ReadValue<Vector2>();
     private void Update()
     {
+        if(_health.getCurrentHealth() <= 0f)
+        {
+            SceneManager.LoadScene("LoseScene");
+        }
+
         float maxx;
         var velocity = new Vector3(_input.x, _input.y * (1 - _inBossBattle), 0.0f) * _maxSpeed;
         //move

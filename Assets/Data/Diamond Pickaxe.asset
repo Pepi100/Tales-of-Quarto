@@ -15,7 +15,15 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Diamond Pickaxe
-  <Description>k__BackingField: 
+  <Description>k__BackingField: 'BEST PICKAXE EVER!
+
+    Used to destroy Red Stones'
   <ItemImage>k__BackingField: {fileID: 315409029, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
-  <DefaultParametersList>k__BackingField: []
+  <DefaultParametersList>k__BackingField:
+  - itemParameter: {fileID: 11400000, guid: 204edbc305def7043ac75751a0d584ef, type: 2}
+    value: 100
+  - itemParameter: {fileID: 11400000, guid: d9edf284c3dc6f9498830ff216675fdc, type: 2}
+    value: 5
+  - itemParameter: {fileID: 11400000, guid: c76d2daa128cb7f44a348b9de4436746, type: 2}
+    value: 100
   <actionSFX>k__BackingField: {fileID: 0}

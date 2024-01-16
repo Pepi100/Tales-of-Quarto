@@ -15,6 +15,7 @@ MonoBehaviour:
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
   <Name>k__BackingField: Amulet
-  <Description>k__BackingField: 
+  <Description>k__BackingField: Very special item. Keep it. Maybe someone would trade
+    it for a pickaxe.
   <ItemImage>k__BackingField: {fileID: -1906910967, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
   <DefaultParametersList>k__BackingField: []

@@ -24,12 +24,10 @@ public class TestSpawner : MonoBehaviour
     private GameObject _redStone;
     [SerializeField]
     private List<GameObject> _redStonesList = new List<GameObject>();
-    /*
     [SerializeField]
     private GameObject _enemy;
     [SerializeField]
     private List<GameObject> _enemiesList = new List<GameObject>();
-     */
 
     private void Start()
     {
@@ -69,13 +67,13 @@ public class TestSpawner : MonoBehaviour
             Destroy(item);
         }
         _redStonesList.Clear();
-        /*
+        
         foreach (var item in _enemiesList)
         {
             Destroy(item);
         }
         _enemiesList.Clear();
-        */
+        
     }
 
     public void SaveGame()
@@ -119,12 +117,12 @@ public class TestSpawner : MonoBehaviour
         {
             _redStonesList.Add(Instantiate(_redStone, positionData.GetValue(), Quaternion.identity));
         }
-        /*
+        
         foreach (var positionData in PlayerData.instance.getPositionEnemies())
         {
-            _redStonesList.Add(Instantiate(_enemy, positionData.GetValue(), Quaternion.identity));
+            _enemiesList.Add(Instantiate(_enemy, positionData.GetValue(), Quaternion.identity));
         }
-        */
+        
     }
 
     public List<Vector3Serilization> getTreesLocation()
@@ -195,12 +193,12 @@ public class TestSpawner : MonoBehaviour
         return redStonesLocationList;
     }
 
-    /*
+    
     public List<Vector3Serilization> getEnemiesLocation()
     {
         List<Vector3Serilization> enemiesLocationList = new List<Vector3Serilization>();
 
-        foreach (var enemy in _enemyList)
+        foreach (var enemy in _enemiesList)
         {
             if (enemy != null)
             {
@@ -212,5 +210,5 @@ public class TestSpawner : MonoBehaviour
 
         return enemiesLocationList;
     }
-    */
+    
 }
