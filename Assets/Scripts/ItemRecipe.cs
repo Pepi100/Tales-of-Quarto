@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 using System.Security.Cryptography;
 
 namespace Inventory.Model
@@ -19,65 +20,79 @@ namespace Inventory.Model
         
 
         [SerializeField] GameObject itemPrefab;
-        [SerializeField] GameObject craftingMenu;
+        
         [SerializeField] GameObject plusSignPrefab;
         [SerializeField] GameObject equalSignPrefab;
+        [SerializeField]
+        private InventoryController _inventoryController;
 
-        private bool canCraftRecipe;
+        private AchievementController _achivController;
+
+        public bool CanCraft()
+        {
+            bool canCraft = true;
+
+            foreach(ItemTypeAndCount itc in recipeSO.input ) {
+
+                if( ! _inventoryController.getData().CheckStackableItem(itc.item, itc.count) )
+                {
+                    canCraft = false; 
+                    break;
+                }
+            }
+
+            return canCraft;
+        }
 
         public void OnPointerEnter()
         {
-            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+            
         }
 
 
         public void OnPointerExit()
         {
-            canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
+            
         }
 
         public void OnPointerClick()
         {
-            if (CraftingManager.Instance.CanCraftRecipe(recipeSO))
-            {
-                //craft
-                //InventoryController.Instance.GetAllItems();
+           //Debug.Log("aaaa");
 
-
-                canCraftRecipe = CraftingManager.Instance.CanCraftRecipe(recipeSO);
-                if (!canCraftRecipe)
+          
+                if (CanCraft())
                 {
-                    //fade
-                }
+                    foreach (ItemTypeAndCount itc in recipeSO.input)
+                    {
 
-            }
+                        _inventoryController.getData().RemoveStackableItem(itc.item, itc.count);
+
+                    }
+
+                    foreach (ItemTypeAndCount itc in recipeSO.output)
+                    {
+
+                        _inventoryController.getData().AddItem(itc.item, itc.count, itc.item.DefaultParametersList);
+
+                    }
+
+                _achivController.SetCrafted(true);
+
+                }
+            
+            
         }
 
+     
 
 
-        public void OpenInventory(InputAction.CallbackContext context)
-        {
 
-           /* if (context.control.displayName == "Q")
-            {
-                if (craftingEnabled == false)
-                {
 
-                    craftingMenu.Show();
-
-                }
-                else
-                {
-                    craftingMenu.Hide();
-                }
-
-            }*/
-
-        }
 
         private void Start ()
         {
             UpdateRecipeUI(recipeSO);
+            _achivController = GameObject.FindWithTag("AchievementController").GetComponent<AchievementController>();
         }
 
         public void UpdateRecipeUI(ItemRecipeSO newRecipeSO)
@@ -129,9 +144,6 @@ namespace Inventory.Model
                 {
                     Instantiate(plusSignPrefab, transform);
                 }
-
-
-
 
             }
 

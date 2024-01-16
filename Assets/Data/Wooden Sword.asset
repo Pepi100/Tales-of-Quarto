@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <IsStackable>k__BackingField: 0
   <MaxStackSize>k__BackingField: 1
-  <Name>k__BackingField: 
+  <Name>k__BackingField: Wooden Sword
   <Description>k__BackingField: A basic sword suitable for early combat encounters.
   <ItemImage>k__BackingField: {fileID: -1006337752, guid: 2a65f9ebfd8f5914c9e87334fcbec957, type: 3}
   <DefaultParametersList>k__BackingField:

@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -440, y: -75.4}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -437.661, y: -77.47908}
+  m_SizeDelta: {x: 104.6779, y: 104.1582}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2203342685822047547
 MonoBehaviour:
@@ -80,6 +80,7 @@ MonoBehaviour:
   itemPrefab: {fileID: 2081544569000889683, guid: f0c37acf466346941a4a77904c177df8, type: 3}
   plusSignPrefab: {fileID: 462850769887786348, guid: d455b3a0ac13ca74bb39f1f84fe05a65, type: 3}
   equalSignPrefab: {fileID: 2721364327794354371, guid: 76550fb4b3f726e45aacf73af4a6914d, type: 3}
+  _inventoryController: {fileID: 0}
 --- !u!114 &-4736102656839419741
 MonoBehaviour:
   m_ObjectHideFlags: 0

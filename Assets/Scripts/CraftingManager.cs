@@ -20,53 +20,10 @@ namespace Inventory.Model
         private GameObject recipePrefab;
         [SerializeField]
         private Transform recipeParent;
-        [SerializeField]
-        private InventorySO _inventoryData;
-        [SerializeField]
-        private InventoryController _inventoryController;
-
-        // Start is called before the first frame update
-        void Start2()
-        {
-            foreach (Transform child in recipeParent)
-            {
-                Destroy(child.gameObject);
-            }
-
-            for (int i = 0; i < recipes.Length; i++)
-            {
-
-                if (true)
-                {
-
-                    GameObject newRecipe = Instantiate(recipePrefab, recipeParent);
-                    newRecipe.name = recipes[i].name;
-
-                    ItemRecipe recipeScript = recipeParent.GetChild(i).GetComponent<ItemRecipe>();
-                    recipeScript.UpdateRecipeUI(recipes[i]);
-
-                }
-            }
+        
 
 
-            for (int i = 0; i < recipeParent.childCount; i++)
-            {
-                
-                /*ItemRecipeSO recipeSO = null;
 
-                foreach (ItemRecipeSO r in recipes)
-                {
-                    Debug.Log(recipeParent.GetChild(i).name);
-                    if (r.recipeName == recipeParent.GetChild(i).name)
-                    {
-                        recipeSO = r;
-                        break;
-                    }
-                }*/
-
-
-            }
-        }
 
         private void Awake()
         {
@@ -85,7 +42,7 @@ namespace Inventory.Model
 
         int found = 0;
 
-        public bool CanCraftRecipe(ItemRecipeSO recipeSO)
+        /*public bool CanCraftRecipe(ItemRecipeSO recipeSO)
         {
             items = _inventoryController.GetAllItems();
 
@@ -103,7 +60,7 @@ namespace Inventory.Model
             return found >= recipeSO.input.Length;
 
 
-        }
+        }*/
 
 
 
