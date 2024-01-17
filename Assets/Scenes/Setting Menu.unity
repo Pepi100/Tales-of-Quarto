@@ -3839,11 +3839,15 @@ MonoBehaviour:
     _y: 0
     _z: 0
   _positionTrees: []
+  _positionFlowers: []
   _positionStones: []
+  _positionRedStones: []
+  _positionEnemies: []
   _inventoryItems: []
   _weaponID: 0
   _achievementsIds: 00000000000000
   _playerHealth: -1
+  _isInBossBattle: 0
 --- !u!4 &1428425363
 Transform:
   m_ObjectHideFlags: 0
@@ -4582,7 +4586,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 1
 --- !u!224 &1730560854

@@ -119,14 +119,15 @@ public class SaveSystem : MonoBehaviour
     private bool ReadFromFile(string name, out string content, int idSlot)
     {
         var fullPath = name;
+        
         if (idSlot != 0)
             fullPath = Path.Combine(Application.persistentDataPath, name);
         else
         {
-            string currentDirectory = Environment.CurrentDirectory;
-            fullPath = Path.Combine(currentDirectory, _defaultSavePath, name);
+            fullPath = Path.Combine(Application.streamingAssetsPath, name);
             Debug.Log(fullPath);
         }
+        
 
         try
         {
